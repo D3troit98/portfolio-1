@@ -1,44 +1,92 @@
 import React from 'react';
-import { DiFirebase, DiReact, DiWindows, DiZend } from 'react-icons/di';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
+import {
+  DiReact,
+  DiMongodb,
+  DiNodejs,
+  DiGit,
+  DiAppcelerator,
+  DiWindows,
+} from "react-icons/di";
+import {
+  Section,
+  SectionDivider,
+  SectionText,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+import {
+  List,
+  ListContainer,
+  ListItem,
+  ListParagraph,
+  ListTitle,
+} from "./TechnologiesStyles";
 
-const Technologies = () =>  (
+const Technologies = () => (
   <Section id="tech">
     <SectionDivider />
     <br />
-    <SectionTitle >Technologies</SectionTitle>
+    <SectionTitle>Technologies</SectionTitle>
     <SectionText>
-      I've worked with a range of technologies in the programming world from web development to system applications. 
+      I have experience working with various technologies in the programming
+      world, ranging from web development to system applications.
     </SectionText>
     <List>
       <ListItem>
         <DiReact size="3rem" />
         <ListContainer>
-          <ListTitle>Front-End</ListTitle>
+          <ListTitle>React and Next JS</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            React.js
+            I have experience building web applications using React.js, a
+            popular JavaScript library for building user interfaces.
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiFirebase size="3rem" />
+        <DiNodejs size="3rem" />
         <ListContainer>
-          <ListTitle>Back-End</ListTitle>
+          <ListTitle>Node.js and Express.js</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            Node and Databases
+            I have experience building server-side applications using Node.js
+            and the Express.js framework.
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+      <ListItem>
+        <DiMongodb size="3rem" />
+        <ListContainer>
+          <ListTitle>MongoDB</ListTitle>
+          <ListParagraph>
+            I have experience working with MongoDB, a popular NoSQL database.
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+      <ListItem>
+        <DiGit size="3rem" />
+        <ListContainer>
+          <ListTitle>Git and Version Control</ListTitle>
+          <ListParagraph>
+            I have experience using Git and other version control tools to
+            manage and collaborate on software projects.
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+      <ListItem>
+        <DiAppcelerator size="3rem" />
+        <ListContainer>
+          <ListTitle>Testing</ListTitle>
+          <ListParagraph>
+            I have experience writing automated tests for web applications to
+            ensure their reliability and quality.
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
         <DiWindows size="3rem" />
         <ListContainer>
-          <ListTitle>Windows Apps</ListTitle>
+          <ListTitle>C++ and Qt </ListTitle>
           <ListParagraph>
-            Experience with <br />
-            Qt, Visual Studio, SQLITE
+            I have experience writing C++ and Qt applications and also ensure
+            their reliability and quality.
           </ListParagraph>
         </ListContainer>
       </ListItem>

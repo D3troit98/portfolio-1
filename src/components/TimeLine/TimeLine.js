@@ -46,26 +46,37 @@ const Timeline = () => {
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-        I am a 100% friendly front-end developer dedicated to software developments on starting on growing applications. I see softwares as the future and it that it can make the world a better place, And I believe I can too with your businesses and what you create.
+        I am a friendly and dedicated full stack developer with a passion for
+        software development. I have experience in a range of technologies, from
+        front-end development using HTML, CSS, and JavaScript to back-end
+        development using Node.js, Express.js, and MongoDB. With a strong
+        understanding of RESTful APIs, Git and version control, and testing, I
+        am confident in my ability to bring your business to the next level.
+        Let's work together to create amazing software that can make the world a
+        better place.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
           {TimeLineData.map((item, index) => (
-            <CarouselMobileScrollNode key={index} final={index === TOTAL_CAROUSEL_COUNT - 1}>
+            <CarouselMobileScrollNode
+              key={index}
+              final={index === TOTAL_CAROUSEL_COUNT - 1}
+            >
               <CarouselItem
                 index={index}
                 id={`carousel__item-${index}`}
                 active={activeItem}
                 onClick={(e) => handleClick(e, index)}
               >
-              <CarouselItemTitle>
-                {item.year}
-                <CarouselItemImg
+                <CarouselItemTitle>
+                  {item.year}
+                  <CarouselItemImg
                     width="208"
                     height="6"
                     viewBox="0 0 208 6"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -80,18 +91,19 @@ const Timeline = () => {
                         y1="0.5"
                         x2="208"
                         y2="0.500295"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="white" />
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="white" />
                         <stop
                           offset="0.79478"
-                          stop-color="white"
-                          stop-opacity="0"
+                          stopColor="white"
+                          stopOpacity="0"
                         />
                       </linearGradient>
                     </defs>
                   </CarouselItemImg>
-              </CarouselItemTitle>
-              <CarouselItemText>{item.text}</CarouselItemText>
+                </CarouselItemTitle>
+                <CarouselItemText>{item.text}</CarouselItemText>
               </CarouselItem>
             </CarouselMobileScrollNode>
           ))}
@@ -99,7 +111,7 @@ const Timeline = () => {
       </CarouselContainer>
       <CarouselButtons>
         {TimeLineData.map((item, index) => (
-          <CarouselButton 
+          <CarouselButton
             key={index}
             index={index}
             active={activeItem}
