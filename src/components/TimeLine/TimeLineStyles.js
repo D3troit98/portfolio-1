@@ -123,12 +123,15 @@ export const CarouselButtons = styled.div`
   display: none;
   visibility: hidden;
 
-  @media ${props => props.theme.breakpoints.sm} {
+  @media ${(props) => props.theme.breakpoints.sm} {
     display: flex;
     visibility: visible;
     margin-bottom: 48px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
   }
-`
+`;
 
 export const CarouselButton = styled.button`
   box-sizing: border-box;
