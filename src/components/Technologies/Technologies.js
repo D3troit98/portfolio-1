@@ -34,10 +34,10 @@ const Technologies = () => (
       <ListItem>
         <DiReact size="3rem" />
         <ListContainer>
-          <ListTitle>React and Next JS</ListTitle>
+          <ListTitle>Next JS and Nuxt</ListTitle>
           <ListParagraph>
-            I have experience building web applications using React.js, a
-            popular JavaScript library for building user interfaces.
+            I have experience building web applications using React.js/Next and
+            Nuxt both popular JavaScript library for building user interfaces.
           </ListParagraph>
         </ListContainer>
       </ListItem>
@@ -73,10 +73,10 @@ const Technologies = () => (
       <ListItem>
         <DiAppcelerator size="3rem" />
         <ListContainer>
-          <ListTitle>Testing</ListTitle>
+          <ListTitle>Go</ListTitle>
           <ListParagraph>
-            I have experience writing automated tests for web applications to
-            ensure their reliability and quality.
+            I have experience writing go to build secure, scalable systems and
+            applications and ensure their reliability and quality.
           </ListParagraph>
         </ListContainer>
       </ListItem>
