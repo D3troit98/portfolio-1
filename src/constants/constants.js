@@ -2,16 +2,9 @@ export const projects = [
   {
     title: "Detroit Store",
     description:
-      "Detroit Store is an online marketplace that sells a variety of items, including kitchen gadgets, home decor, gift ideas, women's fashion, and more. Browse our collection and find something perfect for yourself or as a gift for your loved ones.",
+      "Detroit Store is an online marketplace that sells a variety of items, including kitchen gadgets, home decor, gift ideas, women's fashion, and more.",
     image: "/images/detroit store.png",
-    tags: [
-      "React",
-      "Next.js",
-      "JavaScript",
-      "Stripe",
-      "Flutterwave",
-      "Tailwind CSS",
-    ],
+    tags: ["React", "Next.js", "Flutterwave", "Tailwind CSS"],
     source: "https://github.com/D3troit98/ecommerce-store",
     visit: "https://ecommerce-store-pied-psi.vercel.app",
     id: 1,
@@ -107,22 +100,32 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: 2018, text: "Started learning HTML, CSS, and JavaScript." },
-  { year: 2019, text: "Worked as a freelance developer and learned C++." },
+  {
+    year: 2018,
+    text: "Began my journey in web development by learning HTML, CSS, and JavaScript.",
+  },
+  {
+    year: 2019,
+    text: "Worked as a freelance developer, enhancing my skills and learning C++.",
+  },
   {
     year: 2020,
-    text: "Built C++ applications and learned Git and version control.",
+    text: "Built applications in C++, mastered Git, and version control systems.",
   },
   {
     year: 2021,
-    text: "Started working with React, Node.js, Express.js, MongoDB, and RESTful APIs. Learned testing, agile methodology, and soft skills.",
+    text: "Dived into full-stack development with React, Node.js, Express.js, MongoDB, and RESTful APIs. Gained experience in testing, Agile methodology, and soft skills.",
   },
   {
     year: 2022,
-    text: "Advanced my knowledge in React by learning Redux, Context API, React Hooks, and server-side rendering. Started working with Next.js and GraphQL.",
+    text: "Deepened my React knowledge with Redux, Context API, React Hooks, and server-side rendering. Started using Next.js.",
   },
   {
     year: 2023,
-    text: "Continuing to learn and develop my skills in web development, exploring new technologies such as Gatsby.",
+    text: "Continued to expand my web development skills, exploring new technologies and frameworks.",
+  },
+  {
+    year: 2024,
+    text: "Learning and integrating Go into my full-stack development toolkit.",
   },
 ];

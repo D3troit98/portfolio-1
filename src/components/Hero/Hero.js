@@ -1,8 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection } from './HeroStyles';
+import {
+  Section,
+  SectionText,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+import Button from "../../styles/GlobalComponents/Button";
+import { LeftSection } from "./HeroStyles";
 
 const Hero = () => (
   <Section row nopadding>
@@ -12,22 +16,27 @@ const Hero = () => (
         Welcome to My Personal Portfolio
       </SectionTitle>
       <SectionText>
-        I am a full-stack developer based in Lagos, Nigeria. My expertise
-        includes working with HTML, CSS, and JavaScript, as well as modern
-        libraries and frameworks like React, Next.js, Node.js, and MongoDB. I am
-        experienced with RESTful APIs, Git version control, testing, and
-        following Agile methodology. My skills include working with Redux,
-        Context API, React Hooks, Server-side rendering, GraphQL, and Gatsby. I
-        am passionate about creating solutions and building functional
-        applications using code.
+        I'm a full-stack developer in Lagos, Nigeria, specializing in HTML, CSS,
+        JavaScript, React, and Next.js. I have experience with Node.js, MongoDB,
+        RESTful APIs, Git, testing, and Agile methodology. My expertise includes
+        state management, React Hooks, and server-side rendering. I'm passionate
+        about building functional applications with code.
       </SectionText>
-      <Button
-        onClick={() =>
-          (window.location = "https://wa.me/message/IGUCQGTDTLLOG1")
-        }
-      >
-        WhatsApp Me
-      </Button>
+      <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+        <Button
+          onClick={() =>
+            (window.location = "https://wa.me/message/IGUCQGTDTLLOG1")
+          }
+        >
+          WhatsApp Me
+        </Button>
+        <Button
+          onClick={() => window.open("/documents/Ebuka-Micheal-Duruaku-Resume-20240623.pdf", "_blank")}
+          style={{ marginLeft: "10px" }}
+        >
+          View my CV
+        </Button>
+      </div>
     </LeftSection>
   </Section>
 );
