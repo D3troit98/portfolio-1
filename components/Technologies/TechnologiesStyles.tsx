@@ -33,7 +33,7 @@ export const List = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   margin: 3rem 0;
-  
+
   @media ${props => props.theme.breakpoints.lg}{
     margin: 64px 0;
   }
@@ -42,7 +42,7 @@ export const List = styled.ul`
     margin: 64px 0;
     gap: 24px
   }
-  
+
   @media ${props => props.theme.breakpoints.sm}{
     display: flex;
     flex-direction: column;
@@ -118,7 +118,7 @@ export const ListIcon = styled.img`
   width: 48px;
   height: 48px;
   margin-bottom: 10px;
-  
+
   @media ${props => props.theme.breakpoints.md}{
     width: 40px;
     height: 40px;

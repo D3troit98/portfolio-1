@@ -39,7 +39,7 @@
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 2rem;
+ width: "100%";
   @media (width >= --theme(--breakpoint-sm)) {
     max-width: none;
   }
@@ -51,9 +51,11 @@
   }
   @media (width >= 1024px) {
     max-width: 1024px;
+    padding-inline: 2rem;
   }
   @media (width >= 1280px) {
     max-width: 1280px;
+    padding-inline: 2rem;
   }
 }
 
@@ -75,11 +77,6 @@
   }
 }
 
-/* Responsive breakpoints from your theme */
-@utility container {
-  @apply mx-auto px-4;
-  max-width: 1280px;
-}
 @utility animate-shimmer {
   /* Animations */
   animation: shimmer 2s infinite;
@@ -118,7 +115,7 @@
   /* Dark Theme */
   .dark {
     --background: #0f1624; /* background1 from your theme */
-    --foreground: hsl(204, 23.8%, 95.9%); /* primary1 from your theme */
+    --foreground: #0f1624; /* primary1 from your theme */
     --card: hsl(232.7, 27.3%, 23.7%); /* background2 from your theme */
     --card-foreground: hsl(204, 23.8%, 95.9%);
     --popover: #0f1624;
@@ -148,6 +145,26 @@
 
   html {
     font-family: var(--font-space-grotesk, 'Space Grotesk', sans-serif);
+    font-optical-sizing: auto;
+    font-variation-settings: 'wdth' 100;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #0f1624;
+    border-radius: 40px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
   }
 
   body {
@@ -156,7 +173,12 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-space-grotesk, 'Space Grotesk', sans-serif);
     font-weight: 600;
   }
@@ -170,10 +192,13 @@
 }
 
 @keyframes caret-blink {
-  0%, 70%, 100% {
+  0%,
+  70%,
+  100% {
     opacity: 1;
   }
-  20%, 50% {
+  20%,
+  50% {
     opacity: 0;
   }
 }
@@ -207,25 +232,24 @@ img {
   text-indent: -9999px;
 }
 
-
 @keyframes loading-bar {
-    0% {
-      width: 0%;
-    }
-    20% {
-      width: 20%;
-    }
-    50% {
-      width: 60%;
-    }
-    80% {
-      width: 80%;
-    }
-    100% {
-      width: 100%;
-    }
+  0% {
+    width: 0%;
   }
+  20% {
+    width: 20%;
+  }
+  50% {
+    width: 60%;
+  }
+  80% {
+    width: 80%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 
-  .animate-loading-bar {
-    animation: loading-bar 2s ease-in-out;
-  }
+.animate-loading-bar {
+  animation: loading-bar 2s ease-in-out;
+}

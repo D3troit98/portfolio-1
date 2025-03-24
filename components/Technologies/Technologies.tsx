@@ -1,3 +1,9 @@
+import {
+  Section,
+  SectionDivider,
+  SectionTitle,
+} from '@/styles/GlobalComponents';
+
 import React from 'react';
 import {
   DiReact,
@@ -6,91 +12,108 @@ import {
   DiGit,
   DiAppcelerator,
   DiWindows,
-} from "react-icons/di";
-import {
-  Section,
-  SectionDivider,
-  SectionText,
-  SectionTitle,
-} from "../../styles/GlobalComponents";
-import {
-  List,
-  ListContainer,
-  ListItem,
-  ListParagraph,
-  ListTitle,
-} from "./TechnologiesStyles";
+} from 'react-icons/di';
 
 const Technologies = () => (
-  <Section id="tech">
-    <SectionDivider />
-    <br />
-    <SectionTitle>Technologies</SectionTitle>
-    <SectionText>
-      I have experience working with various technologies in the programming
-      world, ranging from web development to system applications.
-    </SectionText>
-    <List>
-      <ListItem>
-        <DiReact size="3rem" />
-        <ListContainer>
-          <ListTitle>Next JS and Nuxt</ListTitle>
-          <ListParagraph>
-            I have experience building web applications using React.js/Next and
-            Nuxt both popular JavaScript library for building user interfaces.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiNodejs size="3rem" />
-        <ListContainer>
-          <ListTitle>Node.js and Express.js</ListTitle>
-          <ListParagraph>
-            I have experience building server-side applications using Node.js
-            and the Express.js framework.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiMongodb size="3rem" />
-        <ListContainer>
-          <ListTitle>MongoDB</ListTitle>
-          <ListParagraph>
-            I have experience working with MongoDB, a popular NoSQL database.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiGit size="3rem" />
-        <ListContainer>
-          <ListTitle>Git and Version Control</ListTitle>
-          <ListParagraph>
-            I have experience using Git and other version control tools to
-            manage and collaborate on software projects.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiAppcelerator size="3rem" />
-        <ListContainer>
-          <ListTitle>Go</ListTitle>
-          <ListParagraph>
-            I have experience writing go to build secure, scalable systems and
-            applications and ensure their reliability and quality.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-      <ListItem>
-        <DiWindows size="3rem" />
-        <ListContainer>
-          <ListTitle>C++ and Qt </ListTitle>
-          <ListParagraph>
-            I have experience writing C++ and Qt applications and also ensure
-            their reliability and quality.
-          </ListParagraph>
-        </ListContainer>
-      </ListItem>
-    </List>
+  <Section nopadding id="tech">
+    <div className="w-full mt-24">
+      <div className="flex gap-2 flex-col">
+        <SectionTitle main>Technologies</SectionTitle>
+        <SectionDivider />
+      </div>
+
+      <p className="text-lg text-gray-300 mb-12 max-w-3xl">
+        I have experience working with various technologies in the programming
+        world, ranging from web development to system applications.
+      </p>
+
+      {/* Technologies Grid */}
+      <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-12 mx-auto  w-full">
+        <li className="flex flex-col sm:flex-row lg:flex-col p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 transition-all">
+          <div className="mb-4 sm:mb-0 sm:mr-4 lg:mb-4 lg:mr-0">
+            <DiReact className="text-blue-400" size="3rem" />
+          </div>
+          <div>
+            <h4 className="text-xl font-bold text-white mb-2">
+              Next JS and Nuxt
+            </h4>
+            <p className="text-gray-300">
+              I have experience building web applications using React.js/Next
+              and Nuxt both popular JavaScript library for building user
+              interfaces.
+            </p>
+          </div>
+        </li>
+
+        <li className="flex flex-col sm:flex-row lg:flex-col p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 transition-all">
+          <div className="mb-4 sm:mb-0 sm:mr-4 lg:mb-4 lg:mr-0">
+            <DiNodejs className="text-green-400" size="3rem" />
+          </div>
+          <div>
+            <h4 className="text-xl font-bold text-white mb-2">
+              Node.js and Express.js
+            </h4>
+            <p className="text-gray-300">
+              I have experience building server-side applications using Node.js
+              and the Express.js framework.
+            </p>
+          </div>
+        </li>
+
+        <li className="flex flex-col sm:flex-row lg:flex-col p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 transition-all">
+          <div className="mb-4 sm:mb-0 sm:mr-4 lg:mb-4 lg:mr-0">
+            <DiMongodb className="text-green-500" size="3rem" />
+          </div>
+          <div>
+            <h4 className="text-xl font-bold text-white mb-2">MongoDB</h4>
+            <p className="text-gray-300">
+              I have experience working with MongoDB, a popular NoSQL database.
+            </p>
+          </div>
+        </li>
+
+        <li className="flex flex-col sm:flex-row lg:flex-col p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 transition-all">
+          <div className="mb-4 sm:mb-0 sm:mr-4 lg:mb-4 lg:mr-0">
+            <DiGit className="text-orange-500" size="3rem" />
+          </div>
+          <div>
+            <h4 className="text-xl font-bold text-white mb-2">
+              Git and Version Control
+            </h4>
+            <p className="text-gray-300">
+              I have experience using Git and other version control tools to
+              manage and collaborate on software projects.
+            </p>
+          </div>
+        </li>
+
+        <li className="flex flex-col sm:flex-row lg:flex-col p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 transition-all">
+          <div className="mb-4 sm:mb-0 sm:mr-4 lg:mb-4 lg:mr-0">
+            <DiAppcelerator className="text-blue-500" size="3rem" />
+          </div>
+          <div>
+            <h4 className="text-xl font-bold text-white mb-2">Go</h4>
+            <p className="text-gray-300">
+              I have experience writing go to build secure, scalable systems and
+              applications and ensure their reliability and quality.
+            </p>
+          </div>
+        </li>
+
+        <li className="flex flex-col sm:flex-row lg:flex-col p-6 rounded-lg bg-gray-800/50 backdrop-blur-sm hover:bg-gray-700/50 transition-all">
+          <div className="mb-4 sm:mb-0 sm:mr-4 lg:mb-4 lg:mr-0">
+            <DiWindows className="text-blue-300" size="3rem" />
+          </div>
+          <div>
+            <h4 className="text-xl font-bold text-white mb-2">C++ and Qt</h4>
+            <p className="text-gray-300">
+              I have experience writing C++ and Qt applications and also ensure
+              their reliability and quality.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
   </Section>
 );
 

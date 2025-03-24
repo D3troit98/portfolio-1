@@ -27,15 +27,15 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
       </head>
-      <body className="bg-background text-foreground overflow-x-hidden min-h-screen antialiased">
-        {/* <ThemeProvider
+      <body className="bg-foreground text-background overflow-x-hidden min-h-screen antialiased">
+        <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           storageKey="ebuka-theme-preference"
-        > */}
-        {children}
-        {/* </ThemeProvider> */}
+        >
+          {children}
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

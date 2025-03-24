@@ -8,23 +8,17 @@ import Timeline from '@/components/TimeLine/TimeLine';
 import Acomplishments from '@/components/Acomplishments/Acomplishments';
 
 export default async function Home() {
-  //     {
-  //   searchParams,
-  // }: {
-  //   params: Promise<{ tutorId: string }>;
-  //   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-  // }
-  //   const currSearchParams = await searchParams;
   return (
     <Layout>
-      <Section grid>
+      <section className="relative overflow-hidden flex">
         <Hero />
         <BackgroundAnimation />
-      </Section>
-      {/* <Projects />
+      </section>
+
+      <Projects />
       <Technologies />
       <Timeline />
-      <Acomplishments /> */}
+      <Acomplishments />
     </Layout>
   );
 }

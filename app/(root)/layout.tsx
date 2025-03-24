@@ -1,11 +1,4 @@
-import type { Metadata } from "next";
-import React from "react";
-
-
-export const metadata: Metadata = {
-  title: "Solutions Platforms",
-  description: "Get world class tutoring from world class tutors",
-};
+import React from 'react';
 
 export default function RootLayout({
   children,

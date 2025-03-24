@@ -2,67 +2,66 @@ import { cn } from '@/lib/utils';
 import styled from 'styled-components'
 
 
-export const Section = ({ children, grid, row, nopadding }) => {
-    return (
-      <section
-        className={cn(
-          "max-w-[1040px] mx-auto relative overflow-hidden box-content",
-          grid ? "grid grid-cols-2" : "flex",
-          row ? "flex-row" : "flex-col",
-          nopadding ? "p-0" : "p-[32px_48px_0]",
-          "md:p-[24px_48px_0] md:flex-col",
-          "sm:p-[16px_16px_0] sm:w-[calc(100vw-32px)] sm:flex-col"
-        )}
-      >
-        {children}
-      </section>
-    );
-  };
+export const Section = ({ children, grid, row, nopadding, id }) => {
+  return (
+    <section
+      id={id}
+      className={cn(
+        'container mx-auto relative overflow-hidden box-border gap-6 ',
+        grid ? 'md:grid grid-cols-2 flex' : 'flex',
+        row ? 'flex-row' : 'flex-col',
+        nopadding ? 'p-4' : 'md:p-8 sm:p-6  p-4',
+        'sm:flex-col md:w-[calc(100vw-32px)] md:flex-col w-full'
+      )}
+    >
+      {children}
+    </section>
+  );
+};
 
+export const SectionTitle = ({ children, main }) => {
+  return (
+    <h2
+      className={cn(
+        'font-extrabold w-max max-w-full bg-clip-text text-transparent',
+        'bg-gradient-to-r from-white via-white/66 to-white/0',
+        main
+          ? 'md:text-[65px] md:leading-[72px]  md:p-[58px_0_16px] sm:text-[56px] sm:leading-[56px] sm:p-[40px_0_12px] text-[28px] leading-[32px] p-[16px_0_8px]'
+          : 'text-[56px] leading-[56px] p-0'
+      )}
+    >
+      {children}
+    </h2>
+  );
+};
 
-  export const SectionTitle = ({ children, main }) => {
-    return (
-      <h2
-        className={cn(
-          "font-extrabold w-max max-w-full bg-clip-text text-transparent",
-          "bg-gradient-to-r from-white via-white/66 to-white/0",
-          main ? "text-[65px] leading-[72px] py-[58px_0_16px]" : "text-[56px] leading-[56px] py-0",
-          "md:text-[56px] md:leading-[56px] md:py-[40px_0_12px]",
-          "sm:text-[28px] sm:leading-[32px] sm:py-[16px_0_8px]"
-        )}
-      >
-        {children}
-      </h2>
-    );
-  };
+export const SectionText = ({ children }) => {
+  return (
+    <p
+      className={cn(
+        'md:max-w-[800px] md:text-[24px] md:leading-[40px] text-[16px] leading-[24px] sm:text-[20px] sm:leading-[32px] font-light md:pb-[3.6rem] text-white/50 pb-[16px] max-w-[670px]  sm:pb-[24px]'
+      )}
+    >
+      {children}
+    </p>
+  );
+};
 
-  export const SectionText = ({ children }) => {
-    return (
-      <p
-        className={cn(
-          "max-w-[800px] text-[24px] leading-[40px] font-light pb-[3.6rem] text-white/50",
-          "md:max-w-[670px] md:text-[20px] md:leading-[32px] md:pb-[24px]",
-          "sm:text-[16px] sm:leading-[24px] sm:pb-[16px]"
-        )}
-      >
-        {children}
-      </p>
-    );
-  };
-
-  export const SectionDivider = ({ colorAlt, divider }) => {
-    return (
-      <div
-        className={cn(
-          "flex justify-center items-center self-center rounded-[10px]",
-          "bg-gradient-to-r",
-          colorAlt ? "from-[#F46737] to-[#945DD6]" : "from-[#13ADC7] to-[#945DD6]",
-          divider ? "my-[4rem]" : "",
-          "w-[64px] h-[6px] md:w-[48px] md:h-[4px] sm:w-[32px] sm:h-[2px]"
-        )}
-      />
-    );
-  };
+export const SectionDivider = ({ colorAlt, divider }) => {
+  return (
+    <div
+      className={cn(
+        'flex rounded-[10px]',
+        'bg-gradient-to-r',
+        colorAlt
+          ? 'from-[#F46737] to-[#945DD6]'
+          : 'from-[#13ADC7] to-[#945DD6]',
+        divider ? 'my-[4rem]' : '',
+        'w-[64px] h-[6px] md:w-[48px] md:h-[4px] sm:w-[32px] sm:h-[2px]'
+      )}
+    />
+  );
+};
 
   export const SectionSubText = ({ children }) => {
     return (
