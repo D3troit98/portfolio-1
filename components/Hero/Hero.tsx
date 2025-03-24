@@ -10,22 +10,16 @@ import {
 const Hero = () => (
   <Section row nopadding>
     <div className="w-full md:w-4/5 flex flex-col">
-      <SectionTitle
-        main
-        className="text-gray-900 dark:text-white
-        bg-gradient-to-r
-        dark:from-white dark:via-white/66 dark:to-white/0
-        from-gray-900 via-gray-700 to-gray-500"
-      >
+      <SectionTitle main>
         Ebuka Duruaku <br />
         Welcome to My Personal Portfolio
       </SectionTitle>
-      <SectionText className="text-gray-700 dark:text-white/50">
-        I'm a full-stack developer in Lagos, Nigeria, specializing in HTML, CSS,
-        JavaScript, React, and Next.js. I have experience with Node.js, MongoDB,
-        RESTful APIs, Git, testing, and Agile methodology. My expertise includes
-        state management, React Hooks, and server-side rendering. I'm passionate
-        about building functional applications with code.
+      <SectionText>
+        I&apos;m a full-stack developer in Lagos, Nigeria, specializing in HTML,
+        CSS, JavaScript, React, and Next.js. I have experience with Node.js,
+        MongoDB, RESTful APIs, Git, testing, and Agile methodology. My expertise
+        includes state management, React Hooks, and server-side rendering.
+        I&apos;m passionate about building functional applications with code.
       </SectionText>
       <div className="flex items-center gap-4 mt-4">
         <Button

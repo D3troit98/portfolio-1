@@ -7,15 +7,21 @@ import {
   SectionTitle,
 } from '@/styles/GlobalComponents';
 
-const Timeline = () => {
-  const [activeItem, setActiveItem] = useState(0);
-  const carouselRef = useRef();
 
-  const scroll = (node, left) => {
+
+// Define the type for the scroll function
+// eslint-disable-next-line no-unused-vars
+type ScrollFunction = (node: HTMLElement, left: number) => void;
+
+const Timeline: React.FC = () => {
+  const [activeItem, setActiveItem] = useState<number>(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scroll: ScrollFunction = (node, left) => {
     return node.scrollTo({ left, behavior: 'smooth' });
   };
 
-  const handleClick = (e, i) => {
+  const handleClick = (e: React.MouseEvent, i: number) => {
     e.preventDefault();
 
     if (carouselRef.current) {
@@ -42,7 +48,7 @@ const Timeline = () => {
     if (activeItem > 0) {
       const newIndex = activeItem - 1;
       setActiveItem(newIndex);
-      handleClick({ preventDefault: () => {} }, newIndex);
+      handleClick({ preventDefault: () => {} } as React.MouseEvent, newIndex);
     }
   };
 
@@ -51,14 +57,16 @@ const Timeline = () => {
     if (activeItem < TimeLineData.length - 1) {
       const newIndex = activeItem + 1;
       setActiveItem(newIndex);
-      handleClick({ preventDefault: () => {} }, newIndex);
+      handleClick({ preventDefault: () => {} } as React.MouseEvent, newIndex);
     }
   };
 
   // snap back to beginning of scroll when window is resized
   useEffect(() => {
     const handleResize = () => {
-      scroll(carouselRef.current, 0);
+      if (carouselRef.current) {
+        scroll(carouselRef.current, 0);
+      }
     };
 
     window.addEventListener('resize', handleResize);
@@ -67,13 +75,9 @@ const Timeline = () => {
 
   return (
     <Section id="about">
-      <div className="">
-        <div className="flex gap-2 flex-col">
-          <SectionTitle main> About Me</SectionTitle>
-          <SectionDivider />
-        </div>
-
-        {/* Section Title */}
+      <SectionDivider />
+      <div className="w-full">
+        <SectionTitle main> About Me</SectionTitle>
 
         {/* Section Text */}
         <p className="text-lg text-gray-300 mb-12 max-w-3xl">
@@ -83,8 +87,8 @@ const Timeline = () => {
           development using Node.js, Express.js, and MongoDB. With a strong
           understanding of RESTful APIs, Git and version control, and testing, I
           am confident in my ability to bring your business to the next level.
-          Let's work together to create amazing software that can make the world
-          a better place.
+          Let&apos;s work together to create amazing software that can make the
+          world a better place.
         </p>
 
         {/* Timeline Carousel Container */}

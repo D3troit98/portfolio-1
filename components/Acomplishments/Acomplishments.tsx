@@ -14,11 +14,8 @@ const data = [
 
 const Acomplishments = () => (
   <Section nopadding>
-    <div className="flex gap-2 flex-col">
-      <SectionTitle main>Personal Accomplishments</SectionTitle>
-      <SectionDivider />
-    </div>
-
+    <SectionDivider />
+    <SectionTitle main>Personal Accomplishments</SectionTitle>
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
       {data.map((card, index) => (
         <div

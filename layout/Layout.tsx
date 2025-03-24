@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react';
 
-import Footer from '../components/Footer/Footer'
-import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Header/Header';
 
-export const Layout = ({children}) => {
+export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="w-full mx-auto">
       <Header />
@@ -11,4 +11,4 @@ export const Layout = ({children}) => {
       <Footer />
     </div>
   );
-}
+};

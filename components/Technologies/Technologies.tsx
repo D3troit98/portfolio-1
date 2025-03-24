@@ -16,12 +16,9 @@ import {
 
 const Technologies = () => (
   <Section nopadding id="tech">
-    <div className="w-full mt-24">
-      <div className="flex gap-2 flex-col">
-        <SectionTitle main>Technologies</SectionTitle>
-        <SectionDivider />
-      </div>
-
+    <SectionDivider />
+    <SectionTitle main>Technologies</SectionTitle>
+    <div className="w-full ">
       <p className="text-lg text-gray-300 mb-12 max-w-3xl">
         I have experience working with various technologies in the programming
         world, ranging from web development to system applications.

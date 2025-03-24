@@ -12,6 +12,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'Duruaku Ebuka Micheal | Portfolio',
   description: 'Personal portfolio for Duruaku Ebuka Micheal showcasing projects and skills',
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={spaceGrotesk.variable} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" sizes="any" />
       </head>
       <body className="bg-foreground text-background overflow-x-hidden min-h-screen antialiased">
         <ThemeProvider

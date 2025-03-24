@@ -1,10 +1,9 @@
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
-import Logo from '@/assets/logo.png';
 import { Button } from '@/components/ui/button';
 import { HomeIcon, RotateCcw } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import React from 'react';
 
 interface ErrorComponentProps {
   error: {
@@ -67,7 +66,7 @@ const ErrorComponent: React.FC<ErrorComponentProps> = ({ error, reset }) => {
               Try Again
             </Button>
             <Link href="/">
-              <Button variant="" className="gap-2">
+              <Button className="gap-2">
                 <HomeIcon className="h-4 w-4" />
                 Return Home
               </Button>

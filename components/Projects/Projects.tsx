@@ -16,7 +16,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Lock } from 'lucide-react';
 
 import { projects } from '../../constants/constants';
 
@@ -35,6 +35,8 @@ interface BlogCardProps {
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ project }) => {
+  const isPrivateRepo = project.source === '';
+
   return (
     <Card className="w-full max-w-sm mx-auto bg-gradient-to-br from-[#1A1A2E] to-[#16213E] border-none text-white shadow-xl hover:scale-105 transition-transform duration-300">
       <CardHeader className="pb-0">
@@ -84,16 +86,28 @@ const BlogCard: React.FC<BlogCardProps> = ({ project }) => {
         <Button
           asChild
           variant="outline"
-          className="w-1/2 bg-transparent text-white border-[#00DBD8] hover:bg-[#00DBD8]/20"
+          className={`w-1/2 bg-transparent text-white ${
+            isPrivateRepo
+              ? 'border-gray-500 cursor-not-allowed opacity-50'
+              : 'border-[#00DBD8] hover:bg-[#00DBD8]/20'
+          }`}
+          disabled={isPrivateRepo}
         >
-          <Link
-            href={project.source}
-            target="_blank"
-            className="flex items-center gap-2"
-          >
-            <Github className="w-4 h-4" />
-            Source Code
-          </Link>
+          {isPrivateRepo ? (
+            <div className="flex items-center gap-2">
+              <Lock className="w-4 h-4" />
+              Private Repo
+            </div>
+          ) : (
+            <Link
+              href={project.source}
+              target="_blank"
+              className="flex items-center gap-2"
+            >
+              <Github className="w-4 h-4" />
+              Source Code
+            </Link>
+          )}
         </Button>
       </CardFooter>
     </Card>
