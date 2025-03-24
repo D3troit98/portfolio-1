@@ -7,7 +7,7 @@ import {
   AiFillInstagram,
   AiOutlineMenu,
   AiOutlineClose,
-  AiOutlineWhatsApp,
+  AiFillLinkedin,
 } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
 import { Moon, Sun } from 'lucide-react';
@@ -69,11 +69,11 @@ const Header = () => {
           <AiFillGithub size="2rem" />
         </Link>
         <Link
-          href="https://wa.me/message/IGUCQGTDTLLOG1"
+          href="https://www.linkedin.com/in/duruaku-ebuka-6b6540137/"
           target="_blank"
           className="p-2 rounded-full transition hover:bg-gray-700"
         >
-          <AiOutlineWhatsApp size="2rem" />
+          <AiFillLinkedin size="2rem" />
         </Link>
 
         {/* Theme Toggle and Mobile Menu Toggle */}
