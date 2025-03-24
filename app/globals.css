@@ -1,0 +1,255 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-space-grotesk), Space Grotesk, sans-serif;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+@utility container {
+  margin-inline: auto;
+ width: "100%";
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+    padding-inline: 2rem;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+    padding-inline: 2rem;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility animate-shimmer {
+  /* Animations */
+  animation: shimmer 2s infinite;
+}
+@utility animate-caret-blink {
+  animation: caret-blink 1.25s ease-out infinite;
+}
+
+@layer utilities {
+  /* Base Theme Variables */
+  :root {
+    /* Light Theme (Default) */
+    --background: #ffffff;
+    --foreground: #0f1624;
+    --card: #ffffff;
+    --card-foreground: #0f1624;
+    --popover: #ffffff;
+    --popover-foreground: #0f1624;
+    --primary: hsl(205.1, 100%, 36.1%); /* button color from your theme */
+    --primary-foreground: hsl(204, 23.8%, 95.9%); /* primary1 from your theme */
+    --secondary: hsl(232.7, 27.3%, 23.7%); /* background2 from your theme */
+    --secondary-foreground: #ffffff;
+    --accent: hsl(34.9, 98.6%, 72.9%); /* accent1 from your theme */
+    --accent-foreground: #0f1624;
+
+    --muted: hsl(0 0% 96.1%);
+    --muted-foreground: hsl(0 0% 45.1%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(0 0% 89.8%);
+    --input: hsl(0 0% 89.8%);
+    --ring: hsl(205.1, 100%, 36.1%);
+    --radius: 0.5rem;
+  }
+
+  /* Dark Theme */
+  .dark {
+    --background: #0f1624; /* background1 from your theme */
+    --foreground: #0f1624; /* primary1 from your theme */
+    --card: hsl(232.7, 27.3%, 23.7%); /* background2 from your theme */
+    --card-foreground: hsl(204, 23.8%, 95.9%);
+    --popover: #0f1624;
+    --popover-foreground: hsl(204, 23.8%, 95.9%);
+    --primary: hsl(205.1, 100%, 36.1%);
+    --primary-foreground: hsl(204, 23.8%, 95.9%);
+    --secondary: hsl(232.7, 27.3%, 23.7%);
+    --secondary-foreground: hsl(204, 23.8%, 95.9%);
+    --accent: hsl(34.9, 98.6%, 72.9%);
+    --accent-foreground: #0f1624;
+
+    --muted: hsl(232.7, 27.3%, 23.7%);
+    --muted-foreground: hsl(204, 23.8%, 80%);
+    --destructive: hsl(0 62.8% 30.6%);
+    --destructive-foreground: hsl(204, 23.8%, 95.9%);
+    --border: hsl(232.7, 27.3%, 23.7%);
+    --input: hsl(232.7, 27.3%, 23.7%);
+    --ring: hsl(205.1, 100%, 36.1%);
+  }
+
+  /* Apply base styles */
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--font-space-grotesk, 'Space Grotesk', sans-serif);
+    font-optical-sizing: auto;
+    font-variation-settings: 'wdth' 100;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #0f1624;
+    border-radius: 40px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-space-grotesk, 'Space Grotesk', sans-serif);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-space-grotesk, 'Space Grotesk', sans-serif);
+    font-weight: 600;
+  }
+}
+
+/* Animations */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  70%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Button Styles */
+button {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  outline: none;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+  transform: none;
+}
+
+/* Image Handling */
+img {
+  color: transparent;
+  text-indent: -9999px;
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+  }
+  20% {
+    width: 20%;
+  }
+  50% {
+    width: 60%;
+  }
+  80% {
+    width: 80%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 2s ease-in-out;
+}
