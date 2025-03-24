@@ -5,6 +5,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import React from 'react';
 import { Space_Grotesk } from 'next/font/google';
 import { ThemeProvider } from 'next-themes'; // Changed import
+import { Toaster } from '@/components/ui/sonner';
+
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -36,6 +38,7 @@ export default function RootLayout({
           storageKey="ebuka-theme-preference"
         >
           {children}
+          <Toaster />
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

@@ -7,6 +7,7 @@ import {
   AiFillInstagram,
   AiOutlineMenu,
   AiOutlineClose,
+  AiOutlineWhatsApp,
 } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
 import { Moon, Sun } from 'lucide-react';
@@ -60,18 +61,20 @@ const Header = () => {
 
       {/* Social Icons */}
       <div className="hidden md:flex justify-center space-x-4">
-        <a
+        <Link
+          target="_blank"
           href="https://github.com/D3troit98"
           className="p-2 rounded-full transition hover:bg-gray-700"
         >
           <AiFillGithub size="2rem" />
-        </a>
-        <a
-          href="https://www.instagram.com/artifice_soul/"
+        </Link>
+        <Link
+          href="https://wa.me/message/IGUCQGTDTLLOG1"
+          target="_blank"
           className="p-2 rounded-full transition hover:bg-gray-700"
         >
-          <AiFillInstagram size="2rem" />
-        </a>
+          <AiOutlineWhatsApp size="2rem" />
+        </Link>
 
         {/* Theme Toggle and Mobile Menu Toggle */}
         <div className="flex items-center space-x-4">
