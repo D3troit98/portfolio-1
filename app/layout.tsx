@@ -38,7 +38,7 @@ export default function RootLayout({
           storageKey="ebuka-theme-preference"
         >
           {children}
-          <Toaster />
+          <Toaster position="top-right" />
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

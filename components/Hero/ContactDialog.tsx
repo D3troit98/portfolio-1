@@ -5,7 +5,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
-import { Toaster } from '@/components/ui/sonner';
 import { MessageSquareText } from 'lucide-react';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
