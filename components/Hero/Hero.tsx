@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { FileText, MessageSquareText } from 'lucide-react';
+import { FileText } from 'lucide-react';
+
 import {
   Section,
   SectionText,
   SectionTitle,
 } from '../../styles/GlobalComponents';
+import ContactDialog from './ContactDialog';
 
 const Hero = () => (
   <Section row nopadding>
@@ -22,25 +24,7 @@ const Hero = () => (
         I&apos;m passionate about building functional applications with code.
       </SectionText>
       <div className="flex items-center gap-4 mt-4">
-        <Button
-          asChild
-          className="h-12
-          bg-gradient-to-l
-          from-purple-600 to-teal-500
-          hover:from-purple-700 hover:to-teal-600
-          dark:from-[#B133FF] dark:to-[#00DBD8]
-          dark:hover:from-[#B133FF] dark:hover:to-[#00DBD8]
-          text-white"
-        >
-          <Link
-            href="https://wa.me/message/IGUCQGTDTLLOG1"
-            target="_blank"
-            className="flex items-center gap-2"
-          >
-            <MessageSquareText className="w-5 h-5" />
-            WhatsApp Me
-          </Link>
-        </Button>
+        <ContactDialog />
 
         <Button
           asChild

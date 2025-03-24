@@ -1,5 +1,6 @@
-import React from "react";
-import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import Link from 'next/link';
+import React from 'react';
+import { AiFillGithub, AiFillInstagram } from 'react-icons/ai';
 
 const Footer = () => {
   return (
@@ -36,18 +37,19 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex gap-6 justify-center md:justify-start">
-            <a
+            <Link
               href="https://github.com/D3troit98"
               className="text-white hover:text-gray-300 transition text-3xl"
             >
               <AiFillGithub />
-            </a>
-            <a
-              href="https://www.instagram.com/artifice_soul/"
+            </Link>
+            <Link
+              target="_blank"
+              href="https://www.instagram.com/arti.ficesoul/"
               className="text-white hover:text-gray-300 transition text-3xl"
             >
               <AiFillInstagram />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
