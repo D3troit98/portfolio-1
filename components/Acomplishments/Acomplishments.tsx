@@ -6,10 +6,10 @@ import {
 } from '../../styles/GlobalComponents';
 
 const data = [
-  { number: 20, text: 'Open Source Projects' },
-  { number: 800, text: 'LinkedIn Followers' },
-  { number: 30, text: 'GitHub Followers' },
-  { number: 20, text: 'GitHub Stars' },
+  { number: 30, text: 'Open Source Projects' },
+  { number: 1000, text: 'LinkedIn Followers' },
+  { number: 11, text: 'GitHub Followers' },
+  { number: 7, text: 'GitHub Stars' },
 ];
 
 const Acomplishments = () => (
