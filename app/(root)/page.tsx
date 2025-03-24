@@ -1,10 +1,11 @@
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Solutions Platforms - World Class Tutoring',
-  description:
-    'Get world class tutoring from world class tutors. Unlock your educational potential with SP HUB.',
-};
+import { Layout } from '@/layout/Layout';
+import { Section, SectionTitle } from '../../styles/GlobalComponents';
+import Hero from '@/components/Hero/Hero';
+import BackgroundAnimation from '@/components/BackgrooundAnimation/BackgroundAnimation';
+import Projects from '@/components/Projects/Projects';
+import Technologies from '@/components/Technologies/Technologies';
+import Timeline from '@/components/TimeLine/TimeLine';
+import Acomplishments from '@/components/Acomplishments/Acomplishments';
 
 export default async function Home() {
   //     {
@@ -18,12 +19,12 @@ export default async function Home() {
     <Layout>
       <Section grid>
         <Hero />
-        <BgAnimation />
+        <BackgroundAnimation />
       </Section>
-      <Projects />
+      {/* <Projects />
       <Technologies />
       <Timeline />
-      <Acomplishments />
+      <Acomplishments /> */}
     </Layout>
   );
 }

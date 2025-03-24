@@ -1,16 +1,9 @@
-import React from "react";
-
-import {
-  Section,
-  SectionText,
-  SectionTitle,
-} from "../../styles/GlobalComponents";
+import { Section, SectionText, SectionTitle } from "../../styles/GlobalComponents";
 import Button from "../../styles/GlobalComponents/Button";
-import { LeftSection } from "./HeroStyles";
 
 const Hero = () => (
   <Section row nopadding>
-    <LeftSection>
+    <div className="w-full sm:w-4/5 md:w-full flex flex-col mx-auto">
       <SectionTitle main center>
         Ebuka Duruaku <br />
         Welcome to My Personal Portfolio
@@ -22,22 +15,11 @@ const Hero = () => (
         state management, React Hooks, and server-side rendering. I'm passionate
         about building functional applications with code.
       </SectionText>
-      <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-        <Button
-          onClick={() =>
-            (window.location = "https://wa.me/message/IGUCQGTDTLLOG1")
-          }
-        >
-          WhatsApp Me
-        </Button>
-        <Button
-          onClick={() => window.open("/documents/Ebuka-Micheal-Duruaku-Resume-20240623.pdf", "_blank")}
-          style={{ marginLeft: "10px" }}
-        >
-          View my CV
-        </Button>
+      <div className="flex items-center gap-6">
+        <Button>WhatsApp Me</Button>
+        <Button className="ml-2">View my CV</Button>
       </div>
-    </LeftSection>
+    </div>
   </Section>
 );
 

@@ -2,11 +2,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
 import React from 'react';
-import { CookiesProvider } from 'next-client-cookies/server';
 import { Space_Grotesk } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from 'next-themes'; // Changed import
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -30,9 +28,14 @@ export default function RootLayout({
         <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
       </head>
       <body className="bg-background text-foreground overflow-x-hidden min-h-screen antialiased">
-        <ThemeProvider defaultTheme="light" storageKey="ebuka-theme-preference">
-          <CookiesProvider>{children}</CookiesProvider>
-        </ThemeProvider>
+        {/* <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          storageKey="ebuka-theme-preference"
+        > */}
+        {children}
+        {/* </ThemeProvider> */}
         <Analytics />
         <SpeedInsights />
       </body>
