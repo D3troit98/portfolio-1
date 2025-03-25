@@ -56,16 +56,16 @@ export const projects = [
     visit: 'https://poetic-mochi-160e06.netlify.app',
     id: 4,
   },
-//   {
-//     title: 'CryptoVerse',
-//     description:
-//       'CryptoVerse provides up-to-date news and analysis about cryptocurrency from all around the world.',
-//     image: '/images/cryptoverse.png',
-//     tags: ['React', 'JavaScript'],
-//     source: 'https://github.com/D3troit98/crypto-article',
-//     visit: 'https://cypto-article-2fa0de.netlify.app',
-//     id: 5,
-//   },
+  //   {
+  //     title: 'CryptoVerse',
+  //     description:
+  //       'CryptoVerse provides up-to-date news and analysis about cryptocurrency from all around the world.',
+  //     image: '/images/cryptoverse.png',
+  //     tags: ['React', 'JavaScript'],
+  //     source: 'https://github.com/D3troit98/crypto-article',
+  //     visit: 'https://cypto-article-2fa0de.netlify.app',
+  //     id: 5,
+  //   },
   {
     title: 'ShareME',
     description:
@@ -122,31 +122,31 @@ export const projects = [
 
 export const TimeLineData = [
   {
-    year: 2018,
-    text: 'Began my journey in web development by learning HTML, CSS, and JavaScript.',
-  },
-  {
-    year: 2019,
-    text: 'Worked as a freelance developer, enhancing my skills and learning C++.',
-  },
-  {
-    year: 2020,
-    text: 'Built applications in C++, mastered Git, and version control systems.',
-  },
-  {
-    year: 2021,
-    text: 'Dived into full-stack development with React, Node.js, Express.js, MongoDB, and RESTful APIs. Gained experience in testing, Agile methodology, and soft skills.',
-  },
-  {
-    year: 2022,
-    text: 'Deepened my React knowledge with Redux, Context API, React Hooks, and server-side rendering. Started using Next.js.',
+    year: 2024,
+    text: 'Learning and integrating Go into my full-stack development toolkit.',
   },
   {
     year: 2023,
     text: 'Continued to expand my web development skills, exploring new technologies and frameworks.',
   },
   {
-    year: 2024,
-    text: 'Learning and integrating Go into my full-stack development toolkit.',
+    year: 2022,
+    text: 'Deepened my React knowledge with Redux, Context API, React Hooks, and server-side rendering. Started using Next.js.',
+  },
+  {
+    year: 2021,
+    text: 'Dived into full-stack development with React, Node.js, Express.js, MongoDB, and RESTful APIs. Gained experience in testing, Agile methodology, and soft skills.',
+  },
+  {
+    year: 2020,
+    text: 'Built applications in C++, mastered Git, and version control systems.',
+  },
+  {
+    year: 2019,
+    text: 'Worked as a freelance developer, enhancing my skills and learning C++.',
+  },
+  {
+    year: 2018,
+    text: 'Began my journey in web development by learning HTML, CSS, and JavaScript.',
   },
 ];
