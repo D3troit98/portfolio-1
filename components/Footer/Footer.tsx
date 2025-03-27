@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub, AiFillInstagram } from 'react-icons/ai';
 import { FaLinkedin } from 'react-icons/fa';
+import DynamicQuote from './DynamicQuote'; // Adjust the import path as needed
 
 const Footer = () => {
   return (
@@ -38,18 +39,9 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-          {/* Quote Section */}
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <blockquote className="italic text-white/70 text-sm sm:text-base">
-              &ldquo;The most important step a man can take. It&apos;s not the
-              first one, is it? It&apos;s the next one. Always the next
-              step.&rdquo;
-              <footer className="text-white/50 text-xs mt-2">
-                - Brandon Sanderson, Words of Radiance
-              </footer>
-            </blockquote>
-          </div>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left min-h-20">
+          {/* Quote Section - Now using the new DynamicQuote component */}
+          <DynamicQuote interval={7000} />
 
           {/* Social Icons */}
           <div className="flex gap-6 justify-center md:justify-end">
