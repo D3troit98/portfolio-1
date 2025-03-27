@@ -205,7 +205,8 @@ export default function CosmereExperience() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Explore the magical systems from Brandon Sanderson's Cosmere universe
+            Explore the magical systems from Brandon Sanderson&apos;s Cosmere
+            universe
           </motion.p>
 
           <motion.div
@@ -217,7 +218,11 @@ export default function CosmereExperience() {
             {magicSystems.map((system) => (
               <motion.div
                 key={system.id}
-                className={`bg-[hsl(232.7,27.3%,23.7%)] p-6 rounded-lg cursor-pointer transition-all duration-300 border-2 ${activeSystem === system.id ? "border-[hsl(34.9,98.6%,72.9%)]" : "border-transparent"}`}
+                className={`bg-[hsl(232.7,27.3%,23.7%)] p-6 rounded-lg cursor-pointer transition-all duration-300 border-2 ${
+                  activeSystem === system.id
+                    ? 'border-[hsl(34.9,98.6%,72.9%)]'
+                    : 'border-transparent'
+                }`}
                 whileHover={{ scale: 1.03 }}
                 onClick={() => setActiveSystem(system.id)}
               >
@@ -227,7 +232,9 @@ export default function CosmereExperience() {
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{system.name}</h3>
-                <p className="text-[hsl(204,23.8%,95.9%)/70] mb-3">{system.description}</p>
+                <p className="text-[hsl(204,23.8%,95.9%)/70] mb-3">
+                  {system.description}
+                </p>
                 <p className="text-[hsl(34.9,98.6%,72.9%)] text-sm">
                   <BookOpen className="inline-block w-4 h-4 mr-1" />
                   {system.series}
@@ -242,7 +249,9 @@ export default function CosmereExperience() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Words of Inspiration</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+              Words of Inspiration
+            </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {quotes.map((quote, index) => (
                 <motion.div
@@ -254,7 +263,11 @@ export default function CosmereExperience() {
                 >
                   <p className="italic mb-3">{quote.text}</p>
                   <p
-                    className={`text-right text-sm transition-colors duration-300 ${hoveredQuote === index ? "text-[hsl(34.9,98.6%,72.9%)]" : "text-[hsl(204,23.8%,95.9%)/70]"}`}
+                    className={`text-right text-sm transition-colors duration-300 ${
+                      hoveredQuote === index
+                        ? 'text-[hsl(34.9,98.6%,72.9%)]'
+                        : 'text-[hsl(204,23.8%,95.9%)/70]'
+                    }`}
                   >
                     — {quote.book}
                   </p>
@@ -279,5 +292,5 @@ export default function CosmereExperience() {
         </div>
       </div>
     </div>
-  )
+  );
 }
