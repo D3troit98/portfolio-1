@@ -2,6 +2,8 @@ import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub, AiFillInstagram } from 'react-icons/ai';
 import { FaLinkedin } from 'react-icons/fa';
+import { FaBook, FaFlask } from 'react-icons/fa';
+import { RiShieldKeyholeLine } from 'react-icons/ri';
 import DynamicQuote from './DynamicQuote'; // Adjust the import path as needed
 
 const Footer = () => {
@@ -36,6 +38,34 @@ const Footer = () => {
               Open to new opportunities and collaborations
             </p>
           </div>
+        </div>
+
+        {/* Additional Pages Section */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-6 text-center">
+          <Link
+            href="/cosmere"
+            className="text-lg text-gray-300 hover:text-white transition flex flex-col items-center"
+          >
+            <FaBook className="mb-2" size="1.5rem" />
+            <span>Cosmere</span>
+          </Link>
+          <Link
+            href="/lab"
+            className="text-lg text-gray-300 hover:text-white transition flex flex-col items-center"
+          >
+            <FaFlask className="mb-2" size="1.5rem" />
+            <span>Lab</span>
+          </Link>
+          <Link
+            href="/secret"
+            className="text-lg text-gray-300/30 hover:text-white transition flex flex-col items-center"
+            aria-label="Secret page"
+          >
+            <RiShieldKeyholeLine className="mb-2" size="1.5rem" />
+            <span className="opacity-30 hover:opacity-100 transition-opacity">
+              Secret
+            </span>
+          </Link>
         </div>
 
         {/* Footer Bottom */}

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
 import {
@@ -26,7 +25,8 @@ const Header = () => {
       </div>
 
       {/* Navigation (Desktop) */}
-      <nav className="hidden md:flex gap-4">
+      <nav className="hidden md:flex items-center gap-4">
+        {/* Section Links */}
         <Link
           href="#projects"
           className="text-lg text-gray-300 hover:text-white transition"
@@ -74,6 +74,7 @@ const Header = () => {
               <AiFillGithub size="2rem" />
             </MenubarTrigger>
             <MenubarContent className="bg-gray-800 text-white border-gray-700">
+              {/* Section Links */}
               <MenubarItem className="hover:bg-gray-700">
                 <Link href="#projects" className="w-full">
                   Projects
@@ -89,7 +90,10 @@ const Header = () => {
                   About
                 </Link>
               </MenubarItem>
+
               <MenubarSeparator className="bg-gray-700" />
+
+              {/* Social Icons */}
               <div className="flex justify-around py-2">
                 <Link
                   href="https://github.com/D3troit98"

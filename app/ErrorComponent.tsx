@@ -39,7 +39,7 @@ const ErrorComponent: React.FC<ErrorComponentProps> = ({ error, reset }) => {
 
       <main className="flex-1 flex flex-col items-center justify-center max-w-7xl mx-auto w-full gap-8">
         <div className="flex flex-col items-center gap-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white">
             5<span className="text-primary">0</span>0 ERR
             <span className="text-primary">O</span>R
           </h1>

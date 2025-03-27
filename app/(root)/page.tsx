@@ -13,7 +13,6 @@ export default async function Home() {
         <Hero />
         <BackgroundAnimation />
       </section>
-
       <Projects />
       <Technologies />
       <Timeline />

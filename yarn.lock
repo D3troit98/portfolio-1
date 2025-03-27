@@ -2062,6 +2062,15 @@ for-each@^0.3.5:
   dependencies:
     is-callable "^1.2.7"
 
+framer-motion@^12.6.2:
+  version "12.6.2"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.6.2.tgz#560b1a23d71ed062a2f6d7c2a000a53ef6ee37b4"
+  integrity sha512-7LgPRlPs5aG8UxeZiMCMZz8firC53+2+9TnWV22tuSi38D3IFRxHRUqOREKckAkt6ztX+Dn6weLcatQilJTMcg==
+  dependencies:
+    motion-dom "^12.6.1"
+    motion-utils "^12.5.0"
+    tslib "^2.4.0"
+
 function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -2869,6 +2878,18 @@ minimist@^1.2.6:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
+motion-dom@^12.6.1:
+  version "12.6.1"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.6.1.tgz#2b8f53c0af51db75301f88f25fc4d4546424ba60"
+  integrity sha512-8XVsriTUEVOepoIDgE/LDGdg7qaKXWdt+wQA/8z0p8YzJDLYL8gbimZ3YkCLlj7bB2i/4UBD/g+VO7y9ZY0zHQ==
+  dependencies:
+    motion-utils "^12.5.0"
+
+motion-utils@^12.5.0:
+  version "12.5.0"
+  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-12.5.0.tgz#0e42a6b8030327166ca0d0ea0d5b86d64c21e51d"
+  integrity sha512-+hFFzvimn0sBMP9iPxBa9OtRX35ZQ3py0UHnb8U29VD+d8lQ8zH3dTygJWqK7av2v6yhg7scj9iZuvTS0f4+SA==
+
 ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
@@ -3477,10 +3498,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sonner@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/sonner/-/sonner-2.0.1.tgz#f41774b2e0ee770152458a336570a4d577d03e6f"
-  integrity sha512-FRBphaehZ5tLdLcQ8g2WOIRE+Y7BCfWi5Zyd8bCvBjiW8TxxAyoWZIxS661Yz6TGPqFQ4VLzOF89WEYhfynSFQ==
+sonner@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/sonner/-/sonner-2.0.2.tgz#d31316f5b93ecfbfa6c32c0ef4b856a651f5b167"
+  integrity sha512-xOeXErZ4blqQd11ZnlDmoRmg+ctUJBkTU8H+HVh9rnWi9Ke28xiL39r4iCTeDX31ODTe/s1MaiaY333dUzLCtA==
 
 source-map-js@^1.0.2:
   version "1.2.0"
