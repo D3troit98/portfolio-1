@@ -245,7 +245,7 @@ const DynamicQuote: React.FC<QuoteProps> = ({ interval = 5000 }) => {
   const currentQuote = sandersonQuotes[currentQuoteIndex];
 
   return (
-    <div className="w-full md:w-1/2 text-center md:text-left">
+    <div className="w-full md:w-1/2 text-center md:text-left min-h-24">
       <blockquote
         className={`
           italic text-white/70 text-sm sm:text-base
