@@ -5,18 +5,29 @@ import Projects from '@/components/Projects/Projects';
 import Technologies from '@/components/Technologies/Technologies';
 import Timeline from '@/components/TimeLine/TimeLine';
 import Acomplishments from '@/components/Acomplishments/Acomplishments';
+import SectionAnimator from '@/components/SectionAnimator/SectionAnimator';
 
 export default async function Home() {
   return (
     <Layout>
-      <section className="relative overflow-hidden flex">
-        <Hero />
-        <BackgroundAnimation />
-      </section>
-      <Projects />
-      <Technologies />
-      <Timeline />
-      <Acomplishments />
+      <SectionAnimator>
+        <section className="relative overflow-hidden flex">
+          <Hero />
+          <BackgroundAnimation />
+        </section>
+      </SectionAnimator>
+      <SectionAnimator>
+        <Projects />
+      </SectionAnimator>
+      <SectionAnimator>
+        <Technologies />
+      </SectionAnimator>
+      <SectionAnimator>
+        <Timeline />
+      </SectionAnimator>
+      <SectionAnimator>
+        <Acomplishments />
+      </SectionAnimator>
     </Layout>
   );
 }

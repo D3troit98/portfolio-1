@@ -1,6 +1,8 @@
+"use client";
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 import {
   Section,
@@ -9,21 +11,46 @@ import {
 } from '../../styles/GlobalComponents';
 import ContactDialog from './ContactDialog';
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
 const Hero = () => (
   <Section row nopadding>
-    <div className="w-full md:w-4/5 flex flex-col">
-      <SectionTitle main>
-        Ebuka Duruaku <br />
-        Welcome to My Personal Portfolio
-      </SectionTitle>
-      <SectionText>
-        I&apos;m a full-stack developer in Lagos, Nigeria, specializing in HTML,
-        CSS, JavaScript, React, and Next.js. I have experience with Node.js,
-        MongoDB, RESTful APIs, Git, testing, and Agile methodology. My expertise
-        includes state management, React Hooks, and server-side rendering.
-        I&apos;m passionate about building functional applications with code.
-      </SectionText>
-      <div className="flex items-center gap-4 mt-4">
+    <motion.div
+      className="w-full md:w-4/5 flex flex-col"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      <motion.div variants={item}>
+        <SectionTitle main>
+          Ebuka Duruaku <br />
+          Welcome to My Personal Portfolio
+        </SectionTitle>
+      </motion.div>
+      <motion.div variants={item}>
+        <SectionText>
+          I&apos;m a full-stack developer in Lagos, Nigeria, specializing in HTML,
+          CSS, JavaScript, React, and Next.js. I have experience with Node.js,
+          MongoDB, RESTful APIs, Git, testing, and Agile methodology. My
+          expertise includes state management, React Hooks, and server-side
+          rendering. I&apos;m passionate about building functional applications
+          with code.
+        </SectionText>
+      </motion.div>
+      <motion.div variants={item} className="flex items-center gap-4 mt-4">
         <ContactDialog />
 
         <Button
@@ -46,8 +73,8 @@ const Hero = () => (
             View my CV
           </Link>
         </Button>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   </Section>
 );
 
