@@ -16,7 +16,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github, Lock } from 'lucide-react';
+import { Code, ExternalLink, Lock } from 'lucide-react';
 
 import { projects } from '../../constants/constants';
 
@@ -104,7 +104,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ project }) => {
               target="_blank"
               className="flex items-center gap-2"
             >
-              <Github className="w-4 h-4" />
+              <Code className="w-4 h-4" />
               Source Code
             </Link>
           )}
