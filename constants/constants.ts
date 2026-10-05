@@ -108,45 +108,21 @@ export const projects = [
   //     visit: "https://voice-expenser-6e257c.netlify.app",
   //     id: 9,
   //   },
-  {
-    title: 'Detroit Store',
-    description:
-      "Detroit Store is an online marketplace that sells a variety of items, including kitchen gadgets, home decor, gift ideas, women's fashion, and more.",
-    image: '/images/detroit store.png',
-    tags: ['React', 'Next.js', 'Flutterwave', 'Tailwind CSS'],
-    source: 'https://github.com/D3troit98/ecommerce-store',
-    visit: 'https://ecommerce-store-pied-psi.vercel.app',
-    id: 9,
-  },
 ];
 
 export const TimeLineData = [
-  {
-    year: 2024,
-    text: 'Learning and integrating Go into my full-stack development toolkit.',
-  },
-  {
-    year: 2023,
-    text: 'Continued to expand my web development skills, exploring new technologies and frameworks.',
-  },
-  {
-    year: 2022,
-    text: 'Deepened my React knowledge with Redux, Context API, React Hooks, and server-side rendering. Started using Next.js.',
-  },
-  {
-    year: 2021,
-    text: 'Dived into full-stack development with React, Node.js, Express.js, MongoDB, and RESTful APIs. Gained experience in testing, Agile methodology, and soft skills.',
-  },
-  {
-    year: 2020,
-    text: 'Built applications in C++, mastered Git, and version control systems.',
-  },
-  {
-    year: 2019,
-    text: 'Worked as a freelance developer, enhancing my skills and learning C++.',
-  },
-  {
-    year: 2018,
-    text: 'Began my journey in web development by learning HTML, CSS, and JavaScript.',
-  },
+  { year: '2024–present', title: 'Full-stack development at D’Accubin', text: 'Building with React, Node.js, MongoDB, and Go. Refactoring legacy code, improving API handling, and applying code-splitting and lazy loading to improve performance.' },
+  { year: '2023', title: 'Web applications across teams', text: 'Worked with Conalle, Picmeclick LLC, and Sagebyte on application stability, social features, and backend development using Nuxt, Rust, React, Django, and PostgreSQL.' },
+  { year: '2022–present', title: 'Desktop and connected systems', text: 'Joined BriskBlender as a part-time Qt software developer, building multithreaded C++ applications, integrating databases, and connecting applications to AWS IoT Core.' },
+  { year: '2021', title: 'Moving into full-stack development', text: 'Expanded into React, Node.js, Express.js, MongoDB, and RESTful APIs, alongside testing and collaborative development.' },
+  { year: '2019–2020', title: 'Freelance work and C++', text: 'Developed my skills through freelance work, C++ applications, Git, and version control.' },
+  { year: '2018', title: 'The first lines of code', text: 'Started my web development journey with HTML, CSS, and JavaScript.' },
+];
+
+export const workExperience = [
+  { company: 'D’Accubin', role: 'Full Stack Developer', period: 'Jan 2024 – present', current: true, summary: 'Refactored legacy code and improved API handling, reducing frontend bugs and improving performance by 25%. Implemented React code-splitting and lazy loading, with Webpack and ESLint supporting code quality.', technologies: ['React', 'Node.js', 'MongoDB', 'Laravel', 'Shadcn UI', 'Go'] },
+  { company: 'BriskBlender', role: 'Qt Software Developer · Part-time', period: 'Jul 2022 – present', current: true, summary: 'Built multi-core, multithreaded applications, improved database retrieval, and integrated AWS IoT Core for real-time tracking and analysis.', technologies: ['C++', 'Qt / QML', 'SQL', 'JavaScript', 'AWS'] },
+  { company: 'Conalle', role: 'Software Developer', period: 'Jul 2023 – Nov 2023', current: false, summary: 'Debugged software issues to improve stability and reduce downtime. Improved page functionality and user experience with Nuxt, SASS, and Rust.', technologies: ['Nuxt', 'SASS', 'Rust', 'Google Cloud'] },
+  { company: 'Picmeclick LLC', role: 'Full Stack Developer', period: 'May 2023 – Sep 2023', current: false, summary: 'Collaborated on fixes to user profiles and posts in a social network application, improving functionality and the overall user experience.', technologies: ['React', 'Node.js', 'MongoDB', 'Redux', 'Material UI'] },
+  { company: 'Sagebyte', role: 'Full Stack Developer', period: 'Jan 2023 – Mar 2023', current: false, summary: 'Developed backend applications with Django and PostgreSQL, collaborated with the team, and debugged code through quality review.', technologies: ['React', 'Django', 'PostgreSQL', 'Redux', 'SASS'] },
 ];

@@ -39,7 +39,7 @@
 
 @utility container {
   margin-inline: auto;
- width: "100%";
+ width: 100%;
   @media (width >= --theme(--breakpoint-sm)) {
     max-width: none;
   }
@@ -209,7 +209,7 @@ button {
   cursor: pointer;
   transition: all 0.2s ease;
   user-select: none;
-  outline: none;
+
 }
 
 button:hover {
@@ -252,4 +252,76 @@ img {
 
 .animate-loading-bar {
   animation: loading-bar 2s ease-in-out;
+}
+
+/* Shared portfolio refinements */
+.portfolio-shell { background: #0f1624; color: #e8edf4; }
+.portfolio-shell main { padding-bottom: 3rem; }
+.portfolio-shell footer { background: #111a29; }
+:where(a, button, input, textarea):focus-visible {
+  outline: 2px solid #78c8c1;
+  outline-offset: 4px;
+}
+::selection { background: #78c8c1; color: #0f1624; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .hero-art { display: none; }
+}
+
+/* Logo wall: two equal tracks keep each row's loop continuous. */
+.tech-wall {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.tech-row { display: flex; width: max-content; }
+.tech-track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 18px;
+  padding: 9px 9px;
+  animation: tech-marquee var(--row-duration, 48s) linear infinite;
+}
+.tech-row:nth-child(even) .tech-track { animation-direction: reverse; }
+.tech-tile {
+  position: relative;
+  display: flex;
+  width: 112px;
+  height: 112px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 20px;
+  background: #121b2a;
+  transition: border-color 180ms ease;
+}
+.tech-tile:hover { border-color: currentColor; }
+.tech-logo svg { width: 44px; height: 44px; }
+.tech-name {
+  position: absolute;
+  bottom: 10px;
+  color: #94a3b8;
+  font-size: 10px;
+  line-height: 1.2;
+}
+.tech-wall:hover .tech-track,
+.tech-wall[data-paused='true'] .tech-track { animation-play-state: paused; }
+@keyframes tech-marquee { to { transform: translateX(-100%); } }
+@media (max-width: 639px) {
+  .tech-tile { width: 84px; height: 88px; border-radius: 16px; }
+  .tech-logo svg { width: 34px; height: 34px; }
+  .tech-track { gap: 12px; padding: 6px; }
+  .tech-name { bottom: 7px; font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tech-wall { overflow: visible; mask-image: none; -webkit-mask-image: none; }
+  .tech-row { display: block; width: 100%; }
+  .tech-track { animation: none !important; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); padding: 8px 0; }
+  .tech-track[aria-hidden='true'], .tech-motion-control { display: none; }
+  .tech-tile { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) and (max-width: 639px) {
+  .tech-track { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

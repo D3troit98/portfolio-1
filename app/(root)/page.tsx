@@ -3,6 +3,7 @@ import Hero from '@/components/Hero/Hero';
 import BackgroundAnimation from '@/components/BackgrooundAnimation/BackgroundAnimation';
 import Projects from '@/components/Projects/Projects';
 import Technologies from '@/components/Technologies/Technologies';
+import Experience from '@/components/Experience/Experience';
 import Timeline from '@/components/TimeLine/TimeLine';
 import Acomplishments from '@/components/Acomplishments/Acomplishments';
 import SectionAnimator from '@/components/SectionAnimator/SectionAnimator';
@@ -24,6 +25,9 @@ export default async function Home() {
       </SectionAnimator>
       <SectionAnimator>
         <Timeline />
+      </SectionAnimator>
+      <SectionAnimator>
+        <Experience />
       </SectionAnimator>
       <SectionAnimator>
         <Acomplishments />

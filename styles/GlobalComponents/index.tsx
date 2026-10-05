@@ -23,11 +23,12 @@ export const Section = ({
     <section
       id={id}
       className={cn(
-        'container mx-auto relative overflow-hidden box-border gap-6 ',
-        grid ? 'md:grid grid-cols-2 flex' : 'flex',
-        row ? 'flex-row' : 'flex-col',
-        nopadding ? 'p-4' : 'md:p-8 sm:p-6  p-4',
-        'sm:flex-col md:w-[calc(100vw-32px)] md:flex-col w-full'
+        'container mx-auto relative box-border flex w-full flex-col gap-6 px-6 sm:px-8',
+        grid ? 'md:grid md:grid-cols-2' : '',
+        row ? 'flex-row' : '',
+        nopadding ? 'py-10 md:py-16' : 'py-12 md:py-20',
+        'scroll-mt-8'
+
       )}
     >
       {children}
@@ -45,11 +46,9 @@ export const SectionTitle = ({
   return (
     <h2
       className={cn(
-        'font-extrabold w-max max-w-full bg-clip-text text-transparent',
-        'bg-gradient-to-r from-white via-white/66 to-white/0',
-        main
-          ? 'md:text-[65px] md:leading-[72px]  md:p-[58px_0_16px] sm:text-[56px] sm:leading-[56px] sm:p-[40px_0_12px] text-[28px] leading-[32px] p-[16px_0_8px]'
-          : 'text-[56px] leading-[56px] p-0'
+        'font-semibold max-w-full text-white tracking-tight',
+        main ? 'text-3xl sm:text-4xl md:text-5xl leading-tight' : 'text-3xl leading-tight'
+
       )}
     >
       {children}
@@ -61,7 +60,7 @@ export const SectionText = ({ children }: { children: ReactNode }) => {
   return (
     <p
       className={cn(
-        'md:max-w-[800px] md:text-[24px] md:leading-[40px] text-[16px] leading-[24px] sm:text-[20px] sm:leading-[32px] font-light md:pb-[3.6rem] text-white/50 pb-[16px] max-w-[670px]  sm:pb-[24px]'
+        'max-w-[65ch] text-base sm:text-lg leading-relaxed text-slate-400'
       )}
     >
       {children}
@@ -79,13 +78,9 @@ export const SectionDivider = ({
   return (
     <div
       className={cn(
-        'flex rounded-[10px]',
-        'bg-gradient-to-r',
-        colorAlt
-          ? 'from-[#F46737] to-[#945DD6]'
-          : 'from-[#13ADC7] to-[#945DD6]',
-        divider ? 'my-[4rem]' : '',
-        'w-[64px] h-[6px] md:w-[48px] md:h-[4px] sm:w-[32px] sm:h-[2px]'
+        'h-1 w-10 rounded-full bg-[#78c8c1]',
+        divider ? 'my-12' : '',
+        colorAlt ? 'opacity-70' : ''
       )}
     />
   );

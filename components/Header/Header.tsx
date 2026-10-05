@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiOutlineMenu } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
 import {
   Menubar,
@@ -12,36 +12,36 @@ import {
 
 const Header = () => {
   return (
-    <header className="w-full flex items-center justify-between p-4 pt-8 text-white container relative z-50">
+    <header className="w-full flex items-center justify-between px-6 sm:px-8 py-6 text-white container relative z-20 border-b border-white/8">
       {/* Logo */}
       <div className="flex items-center">
         <Link
           href="/"
-          className="flex items-center text-white text-2xl font-bold"
+          className="flex items-center text-white text-lg font-semibold tracking-tight"
         >
-          <DiCssdeck size="3rem" />
+          <DiCssdeck size="1.5rem" />
           <span className="ml-2">Portfolio</span>
         </Link>
       </div>
 
       {/* Navigation (Desktop) */}
-      <nav className="hidden md:flex items-center gap-4">
+      <nav className="hidden md:flex items-center gap-8">
         {/* Section Links */}
         <Link
           href="#projects"
-          className="text-lg text-gray-300 hover:text-white transition"
+          className="text-sm text-slate-400 hover:text-white transition"
         >
           Projects
         </Link>
         <Link
           href="#tech"
-          className="text-lg text-gray-300 hover:text-white transition"
+          className="text-sm text-slate-400 hover:text-white transition"
         >
           Technologies
         </Link>
         <Link
           href="#about"
-          className="text-lg text-gray-300 hover:text-white transition"
+          className="text-sm text-slate-400 hover:text-white transition"
         >
           About
         </Link>
@@ -52,26 +52,26 @@ const Header = () => {
         {/* Desktop Social Icons */}
         <div className="hidden md:flex justify-center">
           <Link
-            target="_blank"
-            href="https://github.com/D3troit98"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub profile" href="https://github.com/D3troit98"
             className="p-2 rounded-full transition hover:bg-gray-700"
           >
-            <AiFillGithub size="2rem" />
+            <AiFillGithub size="1.5rem" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/duruaku-ebuka-6b6540137/"
-            target="_blank"
+            aria-label="LinkedIn profile" href="https://www.linkedin.com/in/duruaku-ebuka-6b6540137/"
+            target="_blank" rel="noopener noreferrer"
             className="p-2 rounded-full transition hover:bg-gray-700"
           >
-            <AiFillLinkedin size="2rem" />
+            <AiFillLinkedin size="1.5rem" />
           </Link>
         </div>
 
         {/* Mobile Menu */}
         <Menubar className="md:hidden bg-transparent border-none">
           <MenubarMenu>
-            <MenubarTrigger className="bg-transparent hover:bg-gray-700 p-2 text-white">
-              <AiFillGithub size="2rem" />
+            <MenubarTrigger aria-label="Open navigation menu" className="bg-transparent hover:bg-gray-700 p-2 text-white">
+              <AiOutlineMenu size="1.5rem" />
             </MenubarTrigger>
             <MenubarContent className="bg-gray-800 text-white border-gray-700">
               {/* Section Links */}
@@ -96,19 +96,19 @@ const Header = () => {
               {/* Social Icons */}
               <div className="flex justify-around py-2">
                 <Link
-                  href="https://github.com/D3troit98"
+                  aria-label="GitHub profile" href="https://github.com/D3troit98"
                   className="p-2 rounded-full hover:bg-gray-700"
                 >
                   <AiFillGithub size="1.5rem" />
                 </Link>
                 <Link
-                  href="https://www.linkedin.com/in/duruaku-ebuka-6b6540137/"
+                  aria-label="LinkedIn profile" href="https://www.linkedin.com/in/duruaku-ebuka-6b6540137/"
                   className="p-2 rounded-full hover:bg-gray-700"
                 >
                   <AiFillLinkedin size="1.5rem" />
                 </Link>
                 <Link
-                  href="https://www.instagram.com/artifice_soul/"
+                  aria-label="Instagram profile" href="https://www.instagram.com/artifice_soul/"
                   className="p-2 rounded-full hover:bg-gray-700"
                 >
                   <AiFillInstagram size="1.5rem" />

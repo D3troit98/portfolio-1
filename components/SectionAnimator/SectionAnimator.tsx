@@ -1,36 +1,11 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { motion, useReducedMotion } from 'framer-motion';
 
 const SectionAnimator = ({ children }: { children: React.ReactNode }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: false, // Trigger animation every time it comes into view
-    threshold: 0.1, // Percentage of element in view to trigger
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
+  const reducedMotion = useReducedMotion();
   return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={variants}
-    >
+    <motion.div initial={{ opacity: 1, y: reducedMotion ? 0 : 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.08 }} transition={{ duration: reducedMotion ? 0 : 0.45, ease: 'easeOut' }} style={{ opacity: 1 }}>
       {children}
     </motion.div>
   );

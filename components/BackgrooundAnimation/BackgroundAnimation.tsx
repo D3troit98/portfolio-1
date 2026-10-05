@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BackgroundAnimation = () => (
-  <div className="absolute w-full md:w-1/2 right-0 top-10">
+  <div aria-hidden="true" className="hero-art pointer-events-none absolute w-full max-w-xl md:w-1/2 -right-24 md:right-0 top-12 opacity-40 md:opacity-80">
     <svg
       className="BgAnimation__svg "
       viewBox="0 0 602 602"

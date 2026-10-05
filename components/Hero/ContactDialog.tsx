@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { toast } from 'sonner';
-import { MessageSquareText } from 'lucide-react';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -32,14 +30,9 @@ const ContactDialog = () => {
   });
 
   const onSubmit = (data: ContactFormData) => {
-    // In a real implementation, you would send this data
-    console.log('Contact Form Submitted:', data);
-
-    // Show toast notification using Sonner
-    toast.success('Message Submitted', {
-      description: 'Thank you for your message! We\'ll get back to you soon.',
-      duration: 4000,
-    });
+    const subject = encodeURIComponent(`Portfolio enquiry from ${data.name}`);
+    const body = encodeURIComponent(`${data.message}\n\nFrom: ${data.name}\nReply to: ${data.email}`);
+    window.location.href = `mailto:Duruakuebuka@gmail.com?subject=${subject}&body=${body}`;
 
     setIsOpen(false);
     reset();
@@ -50,52 +43,63 @@ const ContactDialog = () => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <Button
-            className="h-12
-            bg-gradient-to-l
-            from-purple-600 to-teal-500
-            hover:from-purple-700 hover:to-teal-600
-            dark:from-[#B133FF] dark:to-[#00DBD8]
-            dark:hover:from-[#B133FF] dark:hover:to-[#00DBD8]
-            text-white"
+            className="h-12 rounded-lg bg-[#78c8c1] px-5 font-medium text-[#0f1624] hover:bg-[#92d6cf]"
           >
-            <MessageSquareText className="w-5 h-5 mr-2" />
             Contact Me
           </Button>
         </DialogTrigger>
-        <DialogContent className='bg-foreground border-background'>
+        <DialogContent className="border-white/15 bg-[#141e2e] text-white">
           <DialogHeader>
             <DialogTitle>Get In Touch</DialogTitle>
           </DialogHeader>
+          <p className="text-sm text-slate-400">This opens your email app with a draft ready to send.</p>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div>
+            <div className="space-y-2">
+              <label htmlFor="contact-name" className="block text-sm text-slate-300">Name</label>
               <Input
+                id="contact-name"
+
+                autoComplete="name"
+                aria-describedby={errors.name ? "contact-name-error" : undefined}
+                aria-invalid={!!errors.name}
                 {...register('name')}
                 placeholder="Your Name"
                 className={errors.name ? 'border-red-500' : ''}
               />
-              {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+              {errors.name && <p id="contact-name-error" role="alert" className="text-red-500 text-sm">{errors.name.message}</p>}
             </div>
 
-            <div>
+            <div className="space-y-2">
+              <label htmlFor="contact-email" className="block text-sm text-slate-300">Email</label>
               <Input
+                id="contact-email"
+                type="email"
+                autoComplete="email"
+                aria-describedby={errors.email ? "contact-email-error" : undefined}
+                aria-invalid={!!errors.email}
                 {...register('email')}
                 placeholder="Your Email"
                 className={errors.email ? 'border-red-500' : ''}
               />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+              {errors.email && <p id="contact-email-error" role="alert" className="text-red-500 text-sm">{errors.email.message}</p>}
             </div>
 
-            <div>
+            <div className="space-y-2">
+              <label htmlFor="contact-message" className="block text-sm text-slate-300">Message</label>
               <Textarea
+                id="contact-message"
+
+                aria-describedby={errors.message ? "contact-message-error" : undefined}
+                aria-invalid={!!errors.message}
                 {...register('message')}
                 placeholder="Your Message"
                 className={`${errors.message ? 'border-red-500' : ''} min-h-[100px]`}
               />
-              {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
+              {errors.message && <p id="contact-message-error" role="alert" className="text-red-500 text-sm">{errors.message.message}</p>}
             </div>
 
-            <Button type="submit" className="w-full">
-              Send Message
+            <Button type="submit" className="w-full bg-[#78c8c1] text-[#0f1624] hover:bg-[#92d6cf]">
+              Continue to email
             </Button>
           </form>
         </DialogContent>
