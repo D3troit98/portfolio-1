@@ -111,7 +111,7 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: '2024–present', title: 'Full-stack development at D’Accubin', text: 'Building with React, Node.js, MongoDB, and Go. Refactoring legacy code, improving API handling, and applying code-splitting and lazy loading to improve performance.' },
+  { year: '2024–present', title: 'Full-stack development at D’Accubin', text: 'Building with Rust, React, Node.js, MongoDB, and Go. Refactoring legacy code, improving API handling, and applying code-splitting and lazy loading to improve performance.' },
   { year: '2023', title: 'Web applications across teams', text: 'Worked with Conalle, Picmeclick LLC, and Sagebyte on application stability, social features, and backend development using Nuxt, Rust, React, Django, and PostgreSQL.' },
   { year: '2022–present', title: 'Desktop and connected systems', text: 'Joined BriskBlender as a part-time Qt software developer, building multithreaded C++ applications, integrating databases, and connecting applications to AWS IoT Core.' },
   { year: '2021', title: 'Moving into full-stack development', text: 'Expanded into React, Node.js, Express.js, MongoDB, and RESTful APIs, alongside testing and collaborative development.' },
@@ -120,7 +120,7 @@ export const TimeLineData = [
 ];
 
 export const workExperience = [
-  { company: 'D’Accubin', role: 'Full Stack Developer', period: 'Jan 2024 – present', current: true, summary: 'Refactored legacy code and improved API handling, reducing frontend bugs and improving performance by 25%. Implemented React code-splitting and lazy loading, with Webpack and ESLint supporting code quality.', technologies: ['React', 'Node.js', 'MongoDB', 'Laravel', 'Shadcn UI', 'Go'] },
+  { company: 'D’Accubin', role: 'Full Stack Developer', period: 'Jan 2024 – present', current: true, summary: 'Refactored legacy code and improved API handling, reducing frontend bugs and improving performance by 25%. Implemented React code-splitting and lazy loading, with Webpack and ESLint supporting code quality.', technologies: ['Rust', 'React', 'Node.js', 'MongoDB', 'Laravel', 'Shadcn UI', 'Go'] },
   { company: 'BriskBlender', role: 'Qt Software Developer · Part-time', period: 'Jul 2022 – present', current: true, summary: 'Built multi-core, multithreaded applications, improved database retrieval, and integrated AWS IoT Core for real-time tracking and analysis.', technologies: ['C++', 'Qt / QML', 'SQL', 'JavaScript', 'AWS'] },
   { company: 'Conalle', role: 'Software Developer', period: 'Jul 2023 – Nov 2023', current: false, summary: 'Debugged software issues to improve stability and reduce downtime. Improved page functionality and user experience with Nuxt, SASS, and Rust.', technologies: ['Nuxt', 'SASS', 'Rust', 'Google Cloud'] },
   { company: 'Picmeclick LLC', role: 'Full Stack Developer', period: 'May 2023 – Sep 2023', current: false, summary: 'Collaborated on fixes to user profiles and posts in a social network application, improving functionality and the overall user experience.', technologies: ['React', 'Node.js', 'MongoDB', 'Redux', 'Material UI'] },
