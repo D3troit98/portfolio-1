@@ -325,3 +325,79 @@ img {
 @media (prefers-reduced-motion: reduce) and (max-width: 639px) {
   .tech-track { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* Home: editorial portfolio. Scoped so the creative lab retains its own style. */
+.folio { color-scheme: light; }
+.folio h1, .folio h2, .folio h3 { font-weight: 500; }
+.folio .folio-eyebrow { font-family: monospace; font-size: 10px; line-height: 1.7; letter-spacing: .12em; text-transform: uppercase; color: #62675f; }
+.folio :where(a, button, summary):focus-visible { outline: 2px solid #a65332; outline-offset: 5px; }
+.folio ::selection { background: #d9b89f; color: #242b26; }
+.folio-text-link { text-decoration-thickness: 1px; text-underline-offset: 5px; transition: color 180ms ease; }
+.folio-text-link:hover { color: #a65332; text-decoration-line: underline; }
+.folio-button { transition: background-color 180ms ease, transform 180ms ease; }
+.folio-button:hover { background-color: #3f4c42; transform: translateY(-2px); }
+.folio-button:active { transform: scale(.98); }
+.folio button:hover { transform: none; }
+.folio-experience summary::-webkit-details-marker { display: none; }
+.folio-experience[open] .folio-expand { transform: rotate(45deg); }
+.folio-expand { transition: transform 180ms ease; }
+@media (prefers-reduced-motion: reduce) {
+  .folio-project-image img, .folio-button { transform: none !important; }
+}
+
+/* The journey from a visible interface to the systems underneath it. */
+.layer-grid, .preview-grid {
+  background-image: linear-gradient(#8e9a8d26 1px, transparent 1px), linear-gradient(90deg, #8e9a8d26 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.layer-stage { perspective: 900px; }
+.system-plane { transform-style: preserve-3d; box-shadow: 0 8px 0 #1b241e66; }
+.folio .layer-choice { text-align: left; }
+.folio .layer-choice:hover { transform: translateX(2px); }
+.layer-navigation a { transition: color 180ms ease; }
+.layer-navigation a:hover { color: #a65332; }
+.folio-hero > div:first-child { animation: hero-arrive .8s cubic-bezier(.22,1,.36,1) both; }
+.layer-explorer { animation: hero-arrive 1s cubic-bezier(.22,1,.36,1) both; }
+.project-window { transition: box-shadow 250ms ease; }
+.project-window:hover { box-shadow: 0 20px 40px -14px #242b2640; }
+.system-flow:hover .flow-packet { animation: packet-travel 1.5s ease-out; }
+.folio a:active, .folio button:active { transform: scale(.98); }
+@keyframes hero-arrive { from { opacity: .5; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes packet-travel { from { transform: translateX(0); } to { transform: translateX(550%); } }
+@media (prefers-reduced-motion: reduce) {
+  .folio-hero > div:first-child, .layer-explorer, .flow-packet { animation: none !important; }
+  .folio a:active, .folio button:active, .folio .layer-choice:hover { transform: none; }
+  .project-window img { transition: none; transform: none !important; }
+}
+.folio-motion-off *, .folio-motion-off *::before, .folio-motion-off *::after {
+  animation: none !important;
+  transition-duration: 0s !important;
+  scroll-behavior: auto !important;
+}
+html:has(.folio-motion-off) { scroll-behavior: auto; }
+.folio-motion-off .project-window img { transform: none !important; }
+@media (max-width: 359px) {
+  .folio-hero h1 { font-size: 2.7rem; }
+  .layer-navigation a { padding-inline: 2px; font-size: 9px; }
+  .layer-navigation a span span { margin-right: 2px; }
+}
+
+/* Shared controls for the creative notebook. */
+.lab-range-label { display: grid; grid-template-columns: 1fr auto; gap: 12px; font-family: monospace; font-size: 10px; }
+.lab-range-label output { font-variant-numeric: tabular-nums; }
+.lab-range-label input { grid-column: 1 / -1; width: 100%; height: 24px; accent-color: #a65332; cursor: pointer; }
+.lab-dark-button, .lab-light-button { min-height: 40px; padding: 10px 15px; border: 1px solid #889180; border-radius: 4px; font-size: 11px; text-align: center; transition: background-color 180ms ease, transform 180ms ease; }
+.lab-dark-button { background: #3a483d; color: #f6f5ef; }
+.lab-dark-button:hover { background: #4b5d4f; }
+.lab-light-button { border-color: #c0c6b7; background: #f6f5ef; color: #242b26; }
+.lab-light-button:hover { background: #dfe2d5; }
+.folio .spring-node:hover, .folio .spring-node:active { transform: none; }
+
+/* Portraits stay readable; motion follows the reader rather than a timer. */
+.folio .character-portrait-button:hover, .folio .character-portrait-button:active { transform: none; }
+.character-dialog { position: fixed; inset: 0; margin: auto; max-width: min(94vw, 900px); max-height: 95dvh; overflow: auto; padding: 20px; border: 1px solid #c9c9bf; border-radius: 6px; background: #f6f5ef; color: #242b26; }
+.character-dialog::backdrop { background: #18221ccc; backdrop-filter: blur(5px); }
+.character-dialog[open] { animation: portrait-open .22s ease-out; }
+@keyframes portrait-open { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .character-dialog[open] { animation: none; } .character-portrait-button img { transform: none !important; } }
+.folio-motion-off .character-portrait-button img { transform: none !important; }
