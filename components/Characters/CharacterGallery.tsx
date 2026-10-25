@@ -73,8 +73,8 @@ function Portrait({
           </span>
         </button>
         <div className="flex justify-between gap-4 border-t border-[#c9c9bf] bg-[#f0ece2] px-4 py-3 font-mono text-[9px] uppercase tracking-wider text-[#62675f]">
-          <span>Portrait study / {character.number}</span>
-          <span>AI fan interpretation</span>
+          <span>Study {character.number}</span>
+          <span>AI fan portrait</span>
         </div>
       </motion.div>
       <dialog
@@ -105,7 +105,7 @@ function Portrait({
             alt={character.alt}
             width={1000}
             height={1333}
-            className="mx-auto h-[72dvh] w-auto max-w-full object-contain"
+            className="mx-auto h-auto max-h-[72dvh] w-auto max-w-full object-contain"
           />
         )}
         <p className="mt-4 text-center font-mono text-[9px] text-[#62675f]">
