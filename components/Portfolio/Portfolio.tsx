@@ -4,6 +4,7 @@ import LayerNav from './LayerNav';
 import SystemJourney from './SystemJourney';
 import { MotionRoot, Reveal } from './Motion';
 import SelectedWork from './SelectedWork';
+import Toolkit from './Toolkit';
 
 const external = { target: '_blank', rel: 'noopener noreferrer' };
 const cv = '/documents/Ebuka_Micheal_Duruaku_Resume.pdf';
@@ -105,9 +106,11 @@ export default function Portfolio() {
                     Still building.
                   </h2>
                   <p className="mt-6 max-w-xl text-base leading-8 text-[#62675f]">
-                    I started with HTML, CSS, and JavaScript in 2018. Since
-                    then, I’ve worked across web applications, C++ desktop
-                    software, cloud integrations, and backend development.
+                    I first got into programming through C++ around 2013, and
+                    loved it. In 2018, I began learning HTML and CSS, drawn
+                    to the visual side of programming and the possibilities of
+                    building graphical interfaces for the web. That path has since taken me across web applications,
+                    desktop software, cloud integrations, and backend development.
                   </p>
                   <p className="mt-4 max-w-xl text-base leading-8 text-[#62675f]">
                     I enjoy understanding how the pieces fit together: what a
@@ -150,6 +153,9 @@ export default function Portfolio() {
                   </p>
                 </aside>
               </section>
+            </Reveal>
+            <Reveal>
+              <Toolkit />
             </Reveal>
           </main>
           <footer
