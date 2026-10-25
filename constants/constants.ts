@@ -116,7 +116,8 @@ export const TimeLineData = [
   { year: '2022–present', title: 'Desktop and connected systems', text: 'Joined BriskBlender as a part-time Qt software developer, building multithreaded C++ applications, integrating databases, and connecting applications to AWS IoT Core.' },
   { year: '2021', title: 'Moving into full-stack development', text: 'Expanded into React, Node.js, Express.js, MongoDB, and RESTful APIs, alongside testing and collaborative development.' },
   { year: '2019–2020', title: 'Freelance work and C++', text: 'Developed my skills through freelance work, C++ applications, Git, and version control.' },
-  { year: '2018', title: 'The first lines of code', text: 'Started my web development journey with HTML, CSS, and JavaScript.' },
+  { year: '2018', title: 'Moving toward the web', text: 'Began learning HTML and CSS, drawn to the visual side of programming and building graphical interfaces for the web.' },
+  { year: 'Around 2013', title: 'It began with C++', text: 'First got into programming through C++, long before moving into web development.' },
 ];
 
 export const workExperience = [
