@@ -3,10 +3,12 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useCalmMotion } from './Motion';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { projects } from '@/constants/constants';
 
 const featured = [
+  { id: 12, category: 'Web', type: 'Consultancy website', description: 'A bold, focused web presence for a data and digital consultancy.', focus: 'React · TypeScript · Vite · Tailwind CSS', note: 'Built the website interface with React and TypeScript, including responsive layouts and video-based brand animation.', context: 'For Loop website', result: 'A live, multi-page consultancy website.' },
+  { id: 13, category: 'Full stack', type: 'Monitoring application', description: 'From a monitoring interface to the Go workers checking websites behind it.', focus: 'React · TypeScript · Go / Gin · PostgreSQL', note: 'The React client uses TanStack Router and Query. A Go/Gin API handles authenticated, team-scoped routes; PostgreSQL and sqlx store monitoring records. Background Go workers schedule website checks, with response-time history and pause/resume controls implemented in the code. The linked site is the public frontend; backend availability is separate.', context: 'Personal full-stack project · private source', result: 'A public frontend demo, backed by a separate Go monitoring implementation.' },
   {
     id: 1,
     category: 'Web',
@@ -40,11 +42,17 @@ const featured = [
   },
 ];
 
+const addedProjects = [
+  { id: 12, title: 'For Loop', visit: 'https://for-loop-rust.vercel.app/', image: '/images/forloop-site.png', source: '' },
+  { id: 13, title: 'Webpulse', visit: 'https://webpulse-livid.vercel.app/', image: '/images/webpulse-site.png', source: '' },
+];
+const findProject = (id: number) => [...projects, ...addedProjects].find(project => project.id === id)!;
+
 type Featured = (typeof featured)[number];
 
 function ProjectPreview({ item, index }: { item: Featured; index: number }) {
   const [mode, setMode] = useState<'desktop' | 'mobile'>('desktop');
-  const project = projects.find((project) => project.id === item.id)!;
+  const project = findProject(item.id);
   const reduced = useCalmMotion();
 
   return (
@@ -91,13 +99,7 @@ function ProjectPreview({ item, index }: { item: Featured; index: number }) {
             duration: reduced ? 0 : undefined,
           }}
         >
-          <Image
-            src={project.image}
-            alt={`${project.title} screenshot in a ${mode} presentation frame`}
-            fill
-            sizes="(max-width: 768px) 90vw, 55vw"
-            className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.035] group-focus-visible:scale-[1.035]"
-          />
+          <Image src={project.image} alt={`${project.title} screenshot in a ${mode} presentation frame`} fill sizes="(max-width: 768px) 90vw, 45vw" className="object-cover object-top transition-transform duration-700 motion-reduce:transition-none group-hover:scale-[1.035] group-focus-visible:scale-[1.035]" />
           <span className="absolute inset-x-0 bottom-0 flex justify-between bg-[#242b26]/95 px-4 py-3 text-[10px] text-[#f6f5ef] opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
             Visit website<span aria-hidden="true">↗</span>
           </span>
@@ -113,11 +115,16 @@ function ProjectPreview({ item, index }: { item: Featured; index: number }) {
 }
 
 export default function SelectedWork() {
-  const [filter, setFilter] = useState('All work');
   const reduced = useCalmMotion();
-  const visible = featured.filter(
-    (project) => filter === 'All work' || project.category === filter
-  );
+  const visible = [featured.find(project => project.id === 1)!, featured.find(project => project.id === 13)!];
+  const grid = [
+    { ...findProject(12), label: 'Consultancy website' },
+    { ...findProject(2), title: 'Ulta Clone', label: 'Beauty retail interface study' },
+    { id: 14, title: 'Detroit Store', visit: 'https://ecommerce-store-pied-psi.vercel.app/', image: '/images/detroit store.png', label: 'Commerce interface' },
+    { ...findProject(11), label: 'Education platform' },
+    { ...findProject(4), label: 'Community application' },
+    { ...findProject(7), label: 'GraphQL / HyGraph publishing project' },
+  ];
 
   return (
     <section id="projects" className="scroll-mt-24 py-20 md:py-28">
@@ -132,48 +139,24 @@ export default function SelectedWork() {
             </span>
           </h2>
           <p className="mt-5 max-w-lg text-sm leading-7 text-[#62675f]">
-            A few web projects, from business websites to a full-stack community
-            application. Open a preview or look beneath the surface.
+            Two projects up close, followed by more of my work across the web.
+            Explore an interface or look beneath the surface.
           </p>
         </div>
-        <div
-          aria-label="Filter projects"
-          className="flex flex-wrap gap-1 justify-self-start rounded-full border border-[#c9c9bf] p-1"
-        >
-          {['All work', 'Web', 'Full stack'].map((label) => (
-            <button
-              key={label}
-              onClick={() => setFilter(label)}
-              aria-pressed={filter === label}
-              className={`min-h-10 rounded-full px-4 py-2 text-xs transition-colors ${filter === label ? 'bg-[#242b26] text-[#f6f5ef]' : 'text-[#62675f] hover:bg-[#e5e5dc]'}`}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
       </div>
-      <p aria-live="polite" aria-atomic="true" className="sr-only">
-        {visible.length} {visible.length === 1 ? 'project' : 'projects'} shown
-      </p>
-      <motion.div layout className="grid gap-x-10 gap-y-14 md:grid-cols-2">
-        <AnimatePresence initial={false} mode="popLayout">
+      <div className="grid gap-x-10 gap-y-12 md:grid-cols-2">
           {visible.map((item, index) => {
-            const project = projects.find((project) => project.id === item.id)!;
+            const project = findProject(item.id);
             return (
               <motion.article
-                layout
                 key={item.id}
                 initial={{ opacity: reduced ? 1 : 0, y: reduced ? 0 : 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: reduced ? 0 : -10 }}
                 transition={{ duration: reduced ? 0 : 0.3 }}
-                className={
-                  index === 0 && filter === 'All work'
-                    ? 'md:col-span-2 md:grid md:grid-cols-[1.45fr_1fr] md:items-center md:gap-12'
-                    : ''
-                }
+                className="min-w-0"
               >
-                <ProjectPreview item={item} index={featured.indexOf(item)} />
+                <ProjectPreview item={item} index={index} />
                 <div className="pt-6 md:py-5">
                   <p className="folio-eyebrow">{item.type}</p>
                   <h3 className="mt-3 text-2xl tracking-tight md:text-3xl">
@@ -234,8 +217,21 @@ export default function SelectedWork() {
               </motion.article>
             );
           })}
-        </AnimatePresence>
-      </motion.div>
+      </div>
+      <div className="mt-12 border-t border-[#c9c9bf] pt-8">
+        <h3 className="folio-eyebrow mb-6">More interfaces / selected work</h3>
+        <div className="grid grid-cols-1 gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
+          {grid.map(project => (
+            <a key={project.id} href={project.visit} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.title} (opens in a new tab)`} className="group min-w-0">
+              <div className={`relative aspect-[16/9] overflow-hidden rounded border border-[#c9c9bf] bg-[#e9e9df]`}>
+                <Image src={project.image} alt={`${project.title} website screenshot`} fill sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw" className={`object-cover object-top transition-transform duration-300 motion-reduce:transition-none group-hover:scale-[1.025] group-focus-visible:scale-[1.025]`} />
+              </div>
+              <div className="mt-3 flex items-center justify-between gap-3"><h4 className="text-base font-medium group-hover:text-[#a65332]">{project.title}</h4><span aria-hidden="true">↗</span></div>
+              <p className="mt-1 text-xs leading-6 text-[#62675f]">{project.label}</p>
+            </a>
+          ))}
+        </div>
+      </div>
       <a
         href="https://github.com/D3troit98?tab=repositories"
         target="_blank"
