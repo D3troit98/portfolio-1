@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import RealmExperience from './RealmExperience';
 import LayerExplorer from './LayerExplorer';
 import LayerNav from './LayerNav';
 import SystemJourney from './SystemJourney';
@@ -12,6 +13,7 @@ const cv = '/documents/Ebuka_Micheal_Duruaku_Resume.pdf';
 export default function Portfolio() {
   return (
     <MotionRoot>
+      <RealmExperience>
       <div className="folio min-h-[100dvh] bg-[#f6f5ef] text-[#242b26]">
         <a
           href="#main-content"
@@ -216,6 +218,7 @@ export default function Portfolio() {
           </footer>
         </div>
       </div>
+      </RealmExperience>
     </MotionRoot>
   );
 }
