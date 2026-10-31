@@ -1,0 +1,205 @@
+/* The realm is a separate composition; classic portfolio styles never enter it. */
+.realm-toggle { position: fixed; right: 20px; bottom: 70px; z-index: 35; display: flex; align-items: center; gap: 13px; padding: 12px 16px; border: 1px solid #b6bbae; border-radius: 8px; background: #f6f5eff5; color: #242b26; text-align: left; box-shadow: 0 6px 24px #17251d15; }
+.realm-toggle > span:nth-child(2) { font-size: 12px; line-height: 1.4; }
+.realm-toggle small { display: block; font-family: monospace; font-size: 8px; letter-spacing: .08em; opacity: .65; }
+.realm-toggle-symbol { font-size: 27px; }
+.realm-switch { width: 29px; height: 17px; border: 1px solid #939c90; border-radius: 20px; padding: 3px; }
+.realm-switch i { display: block; width: 9px; height: 9px; border-radius: 50%; background: #687663; transition: transform .4s; }
+.is-immersive .realm-switch i { transform: translateX(12px); background: #c4d7d3; }
+.is-immersive .realm-toggle { background: #10232be8; border-color: #8caaad66; color: #dfebdf; border-radius: 2px; }
+.is-immersive { background: #10252d; color: #e6e8db; isolation: isolate; color-scheme: dark; }
+.world-journey { --world-ink: #e6e8db; --world-muted: #b0c3c5; --world-gold: #cbbf97; position: relative; isolation: isolate; overflow: clip; }
+.world-journey :is(h1,h2,h3) { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+.world-journey :is(a,button,select):focus-visible { outline: 2px solid var(--world-gold); outline-offset: 6px; }
+.world-journey button:hover { transform: none; }
+.world-journey button:active { transform: scale(.97); }
+.world-canvas { position: fixed; inset: 0; z-index: -3; background: radial-gradient(ellipse at 70% 25%,#486f7c,#10252d 70%); pointer-events: none; }
+.world-canvas canvas { width: 100%; height: 100%; display: block; }
+.world-canvas-atmosphere { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(#789ca11a,transparent 45%,#0a1a2644); }
+.world-canvas-fallback { background: radial-gradient(ellipse at 70% 45%,#527c87,transparent 55%),linear-gradient(150deg,#19313f,#0d1c2b); }
+.world-canvas-fallback::after { content: ''; position: absolute; inset: 25% 0 0; background: #304d5b; clip-path: polygon(0 70%,12% 40%,22% 62%,38% 15%,48% 50%,61% 26%,72% 55%,87% 5%,100% 40%,100% 100%,0 100%); opacity: .6; }
+.world-shade { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg,#0b1b29ed, #0c202b83 39%,#0d202b0a 73%),linear-gradient(0deg,#0b1b29c9,transparent 23%,transparent 88%,#0b1b2999); }
+.world-loading-screen { min-height: 100dvh; display: grid; place-items: center; background: #10252d; color: #cbbf97; font: 12px monospace; letter-spacing: .2em; }
+.world-loading { position: absolute; right: 15%; top: 47%; font: 10px monospace; text-transform: uppercase; letter-spacing: .2em; color: #cbbf97; }
+.world-loading span { display: block; margin-top: 15px; height: 1px; width: 150px; background: #cbbf97; transform-origin: left; animation: world-loading 1.5s ease-in-out infinite alternate; }
+.world-header { position: absolute; inset: 0 0 auto; z-index: 10; padding: 32px 5.5%; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.world-brand { font-size: 28px; letter-spacing: -.09em; display: flex; align-items: center; gap: 22px; }
+.world-brand span { font: 8px monospace; letter-spacing: .2em; color: var(--world-muted); }
+.world-header-coordinate { font: 8px monospace; letter-spacing: .15em; color: #b5c9cb; }
+.world-skip { position: absolute; top: 0; left: 20px; transform: translateY(-150%); z-index: 40; padding: 15px; background: #e6e8db; color: #10252d; }
+.world-skip:focus { transform: translateY(0); }
+.world-compass { position: fixed; left: 22px; top: 43%; z-index: 20; display: grid; gap: 20px; }
+.world-compass a { display: flex; align-items: center; gap: 8px; width: max-content; font: 8px monospace; color: #b7c4c1; }
+.world-compass a > span:last-child { position: absolute; left: 38px; white-space: nowrap; opacity: 0; background: #10252df5; padding: 6px 9px; transition: opacity .25s; }
+.world-compass a:is(:hover,:focus-visible) > span:last-child { opacity: 1; }
+.world-compass a i { height: 4px; width: 4px; border: 1px solid #a4bab2; transform: rotate(45deg); }
+.world-compass a[aria-current] { color: var(--world-gold); }
+.world-compass a[aria-current] i { background: var(--world-gold); border-color: var(--world-gold); }
+.world-chapter { position: relative; min-height: 145dvh; scroll-margin-top: 0; }
+.world-chapter-sticky { position: sticky; top: 0; min-height: 100dvh; display: flex; align-items: center; padding: 105px max(7.7vw,65px) 110px; }
+.world-chapter-body { width: 100%; max-width: 1400px; margin-inline: auto; }
+.world-chapter-label { display: flex; align-items: center; gap: 12px; margin-bottom: 34px; color: var(--world-gold); font: 9px monospace; text-transform: uppercase; letter-spacing: .15em; }
+.world-chapter-label > span { font-family: Georgia,serif; font-size: 15px; }
+.world-chapter-label i { width: 40px; height: 1px; background: #cbbf9755; }
+.world-copy { max-width: 480px; }
+.world-overline { font: 9px/1.8 monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--world-gold); }
+.world-copy :is(h1,h2) { margin-top: 20px; font-size: clamp(3.1rem,5.4vw,6.3rem); line-height: 1.05; letter-spacing: -.055em; }
+.world-copy h2 { font-size: clamp(2.7rem,4.8vw,5.3rem); }
+.world-copy em { color: #d0d8c4; font-weight: 400; }
+.world-copy > p:not(.world-overline,.world-address) { margin-top: 24px; max-width: 370px; font-size: 13px; line-height: 1.95; color: var(--world-muted); }
+.world-primary-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 48px; margin-top: 32px; border-bottom: 1px solid #cbbf9780; padding: 14px 0; font-size: 12px; color: var(--world-ink); transition: color .25s; }
+.world-primary-link:hover { color: var(--world-gold); }
+.world-primary-link span { transition: transform .25s; }
+.world-primary-link:hover span { transform: translate(3px,3px); }
+.world-scene-note { position: absolute; right: 13%; bottom: 17%; color: #c8d8d3; text-align: center; }
+.world-scene-note > span { font-size: 25px; color: var(--world-gold); }
+.world-scene-note p { margin-top: 15px; font: italic 18px/1.45 Georgia,serif; }
+.world-scene-note small { display: block; margin-top: 25px; font: 8px monospace; letter-spacing: .1em; }
+.world-archive-layout { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 7%; }
+.world-select-label { display: block; margin-top: 28px; margin-bottom: 9px; color: var(--world-gold); font: 8px monospace; letter-spacing: .1em; text-transform: uppercase; }
+.world-select { width: 100%; max-width: 330px; border: 1px solid #799ba16b; border-radius: 0; background: #132d39d9; padding: 14px 12px; font: 12px var(--font-sans),sans-serif; color: #e6e8db; }
+.world-artifact-paging { display: flex; align-items: center; gap: 25px; margin-top: 18px; font: 10px monospace; }
+.world-artifact-paging button { width: 36px; height: 36px; border: 1px solid #829d9f55; border-radius: 50%; color: var(--world-gold); }
+.world-artifact-paging button:hover { background: #a1b8b31c; }
+.world-artifact-paging i { font-style: normal; opacity: .5; }
+.world-artifact { position: relative; perspective: 1200px; max-width: 610px; }
+.world-artifact-rune { position: absolute; font: 260px/1 Georgia,serif; opacity: .15; color: var(--world-gold); top: -125px; right: -40px; pointer-events: none; }
+.world-artifact-content { padding: 9px; border: 1px solid #b6b99a66; background: #102530d9; box-shadow: 16px 22px 0 #08172455; transform: rotateY(-7deg) rotateX(2deg); animation: world-artifact-arrive .6s ease-out both; }
+.world-artifact-visual { position: relative; aspect-ratio: 16/9; background: #1e3b49; overflow: hidden; }
+.world-artifact-visual::after { content: ''; position: absolute; inset: 0; border: 1px solid #cbbf9755; pointer-events: none; }
+.world-artifact-corner { position: absolute; left: 0; top: 0; padding: 8px 11px; font: 9px monospace; color: #f4edcc; background: #10252ddf; }
+.world-artifact-description { padding: 22px 18px 15px; }
+.world-artifact-description h3 { font-size: 28px; margin: 8px 0; letter-spacing: -.02em; }
+.world-artifact-description > p:not(.world-overline) { font-size: 11px; line-height: 1.85; color: var(--world-muted); }
+.world-artifact-description ul { display: flex; flex-wrap: wrap; gap: 6px 15px; margin-top: 14px; color: var(--world-gold); font: 8px/1.8 monospace; }
+.world-artifact-links { display: flex; gap: 24px; margin-top: 20px; font-size: 11px; }
+.world-artifact-links a { border-bottom: 1px solid #cbbf9780; padding-bottom: 7px; }
+.world-artifact-links a:hover { color: var(--world-gold); }
+.world-artifact-inscription { min-height: 180px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(ellipse,#5b817940,transparent 70%); }
+.world-artifact-inscription > span { font-size: 65px; color: var(--world-gold); }
+.world-artifact-inscription p { font: italic 24px Georgia,serif; }
+.world-artifact-inscription small { margin-top: 12px; font: 8px monospace; text-transform: uppercase; letter-spacing: .14em; color: var(--world-muted); }
+.world-abilities-layout { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 6%; }
+.world-order-choices { display: grid; grid-template-columns: 1fr 1fr; margin-top: 30px; max-width: 370px; gap: 9px; }
+.world-order-choices button { display: flex; align-items: center; gap: 11px; min-height: 50px; padding: 10px; text-align: left; border: 1px solid #7d999e55; background: #122b3480; color: #b0c3c5; font-size: 10px; }
+.world-order-choices button > span { font: 13px Georgia,serif; width: 18px; color: var(--world-gold); }
+.world-order-choices button[aria-pressed=true] { background: #b9c2a91a; border-color: #cbbf97aa; color: #e6e8db; }
+.world-constellation { --orbit-radius: clamp(130px,16vw,220px); position: relative; width: 100%; aspect-ratio: 1; max-width: 550px; margin: auto; }
+.world-constellation-ring { position: absolute; inset: 12%; border: 1px solid #cbbf9755; border-radius: 50%; transform: rotateX(28deg) rotateZ(-25deg); }
+.world-constellation-ring.second { inset: 19%; transform: rotateX(-30deg) rotateY(40deg) rotateZ(45deg); border-color: #99c4ca55; }
+.world-constellation-core { position: absolute; inset: 23%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(ellipse,#142e3ae8,transparent 75%); }
+.world-constellation-core > span { font: 35px Georgia,serif; color: var(--world-gold); }
+.world-constellation-core h3 { margin-top: 14px; font-size: 24px; white-space: nowrap; }
+.world-constellation-core p { margin-top: 14px; color: #b7ccce; font-size: 10px; line-height: 1.8; }
+.world-constellation ul { position: absolute; inset: 0; }
+.world-constellation li { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) rotate(var(--angle)) translateY(calc(-1 * var(--orbit-radius))) rotate(var(--counter-angle)); }
+.world-constellation li span { display: block; white-space: nowrap; background: #132e38ed; border: 1px solid #9db2a766; padding: 8px 10px; color: #d0d9cf; font: 9px monospace; animation: world-node-arrive .4s ease-out both; }
+.world-oaths-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 8%; align-items: center; }
+.world-personal-links { margin-top: 25px; display: grid; gap: 13px; font-size: 11px; color: var(--world-gold); }
+.world-personal-links a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.world-memory { position: relative; max-width: 600px; }
+.world-memory-stone { margin-left: auto; margin-right: 12%; width: 135px; height: 140px; display: grid; place-items: center; background: linear-gradient(130deg,#708b89,#2a4958 70%); clip-path: polygon(22% 0,85% 7%,100% 83%,66% 100%,8% 89%,0 20%); box-shadow: inset -18px -10px #102b3944; transform: rotate(9deg); }
+.world-memory-stone span { font: italic 18px Georgia,serif; color: #e3e1c6; transform: rotate(-9deg); }
+.world-memory-copy { margin-top: 24px; border-left: 1px solid #cbbf97aa; padding: 6px 0 6px 24px; background: linear-gradient(90deg,#10252dc9,transparent); }
+.world-memory-copy h3 { margin-top: 12px; font-size: 27px; line-height: 1.2; }
+.world-memory-copy > p:last-child { margin-top: 14px; font-size: 12px; line-height: 1.9; color: var(--world-muted); min-height: 90px; }
+.world-years { display: grid; grid-template-columns: repeat(7,1fr); gap: 8px; margin-top: 28px; border-top: 1px solid #cbbf9744; }
+.world-years button { position: relative; display: grid; justify-items: center; gap: 11px; color: var(--world-muted); font-size: 9px; padding-top: 10px; }
+.world-years button > span { font-size: 18px; }
+.world-years button small { font: 7px/1.6 monospace; }
+.world-years button[aria-pressed=true] { color: var(--world-gold); }
+.world-record-trigger { display: flex; justify-content: space-between; width: 100%; margin-top: 25px; border-block: 1px solid #9ab5b244; padding-block: 12px; font-size: 10px; color: var(--world-gold); }
+.world-record { max-height: 260px; overflow-y: auto; overscroll-behavior: contain; background: #10252df5; padding: 20px; border: 1px solid #9ab5b244; }
+.world-record article + article { border-top: 1px solid #9ab5b244; padding-top: 15px; margin-top: 15px; }
+.world-record h4 { font-size: 12px; margin-block: 8px; color: var(--world-ink); }
+.world-record p { font-size: 10px; color: var(--world-muted); line-height: 1.9; }
+.world-record small { display: block; margin-top: 10px; color: var(--world-gold); font: 8px/1.8 monospace; }
+.world-final { min-height: 100dvh; }
+.world-final .world-chapter-sticky { min-height: 100dvh; }
+.world-final .world-copy { max-width: 650px; }
+.world-email { font: italic 25px Georgia,serif; }
+.world-address { color: #b0c3c5; font-size: 10px; margin-top: 14px; overflow-wrap: anywhere; }
+.world-contact-links { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 30px; font-size: 11px; color: var(--world-gold); }
+.world-colophon { margin-top: 60px; color: #9eb8bf; font: 8px/1.9 monospace; }
+.world-location { position: fixed; bottom: 28px; left: max(7.7vw,65px); z-index: 15; width: 220px; pointer-events: none; }
+.world-location > span { color: #aabdbb; font: 7px monospace; letter-spacing: .15em; }
+.world-location p { margin-top: 7px; font: italic 15px Georgia,serif; color: var(--world-gold); }
+.world-location > div { margin-top: 13px; width: 130px; height: 1px; background: #9db8b344; }
+.world-location i { display: block; height: 1px; width: 100%; background: #cbbf97; transform-origin: left; }
+@keyframes world-loading { from { transform: scaleX(.1); opacity: .3; } to { transform: scaleX(1); opacity: .8; } }
+@keyframes world-artifact-arrive { from { opacity: .3; transform: translateY(12px) rotateY(-4deg); } to { opacity: 1; transform: translateY(0) rotateY(-7deg) rotateX(2deg); } }
+@keyframes world-node-arrive { from { opacity: .2; transform: scale(.9); } to { opacity: 1; transform: scale(1); } }
+@media (min-width: 1600px) { .world-chapter-sticky { padding-inline: 10%; } }
+@media (max-width: 1000px) {
+  .world-chapter-sticky { padding-inline: 65px 40px; }
+  .world-archive-layout, .world-abilities-layout, .world-oaths-layout { gap: 5%; }
+  .world-constellation { --orbit-radius: 145px; }
+  .world-constellation-core { inset: 25% 18%; }
+  .world-constellation-core p { font-size: 9px; }
+  .world-constellation-core h3 { font-size: 20px; }
+  .world-artifact-description { padding: 15px 10px; }
+}
+@media (max-width: 767px) {
+  .world-shade { background: linear-gradient(90deg,#0b1b29d9,#0c202b55),linear-gradient(0deg,#0b1b29e8,transparent 80%); }
+  .world-header { padding: 25px 24px; }
+  .world-brand { gap: 15px; }
+  .world-brand span { font-size: 7px; letter-spacing: .1em; }
+  .world-header-coordinate { display: none; }
+  .world-compass { top: auto; left: 24px; right: 24px; bottom: 127px; display: flex; gap: 0; justify-content: space-between; background: #10252de6; padding: 12px 15px; border: 1px solid #7e999c44; }
+  .world-compass a { font-size: 8px; }
+  .world-compass a > span:last-child { position: static; background: none; padding: 0; font-size: 8px; opacity: 1; }
+  .world-compass a > span:first-child { display: none; }
+  .world-compass a i { width: 3px; height: 3px; }
+  .world-chapter { min-height: 125dvh; }
+  .world-chapter-sticky { min-height: 100dvh; padding: 100px 24px 200px; }
+  .world-chapter-label { margin-bottom: 24px; font-size: 8px; }
+  .world-copy h1 { font-size: clamp(3.2rem,10vw,4.5rem); }
+  .world-copy h2 { font-size: 2.8rem; }
+  .world-copy > p:not(.world-overline,.world-address) { font-size: 12px; margin-top: 20px; max-width: 340px; }
+  .world-scene-note { display: none; }
+  .world-archive-layout, .world-abilities-layout, .world-oaths-layout { grid-template-columns: 1fr; gap: 35px; }
+  .world-artifact { width: 100%; max-width: 500px; }
+  .world-artifact-content { transform: none; animation: world-node-arrive .4s ease-out; }
+  .world-artifact-visual { aspect-ratio: 16/8; }
+  .world-artifact-description h3 { font-size: 25px; }
+  .world-artifact-rune { display: none; }
+  .world-select { max-width: none; }
+  .world-artifact-paging { margin-top: 12px; }
+  .world-constellation { --orbit-radius: min(37vw,190px); max-width: 470px; aspect-ratio: 1; min-height: 330px; }
+  .world-constellation-core { inset: 27% 23%; }
+  .world-constellation li span { font-size: 8px; padding: 7px; }
+  .world-order-choices { max-width: none; }
+  .world-memory-stone { width: 90px; height: 95px; margin-right: 10%; }
+  .world-memory-copy h3 { font-size: 25px; }
+  .world-years { gap: 6px; }
+  .world-years button small { font-size: 6px; }
+  .world-final { min-height: 100dvh; }
+  .world-location { bottom: 28px; left: 24px; width: 140px; }
+  .world-location p { font-size: 12px; }
+  .world-location > div { width: 80px; }
+  .realm-toggle { bottom: 66px; right: 16px; padding: 9px 12px; }
+  .realm-toggle > span:nth-child(2) { font-size: 10px; }
+  .realm-toggle-symbol { font-size: 20px; }
+  .world-colophon { font-size: 7px; max-width: 260px; }
+}
+@media (prefers-reduced-motion: reduce) { .world-journey *, .world-journey *::before,.world-journey *::after { animation: none !important; transition: none !important; } .world-artifact-content { transform: none; } }
+.folio-motion-off .world-artifact-content { transform: none; }
+/* Keep persistent controls away from the artifact descriptions. */
+.is-immersive .realm-toggle { top: 20px; bottom: auto; }
+.world-header-coordinate { margin-right: 240px; }
+@media (min-width: 768px) and (max-height: 800px) {
+  .world-chapter-sticky { padding-block: 70px 90px; }
+  .world-chapter-label { margin-bottom: 20px; }
+  .world-artifact-visual { aspect-ratio: 16/7.3; }
+  .world-memory-stone { height: 105px; width: 110px; }
+  .world-copy h2 { font-size: clamp(2.7rem,4.5vw,4.6rem); }
+}
+@media (max-width: 767px) {
+  .is-immersive .realm-toggle { top: auto; bottom: 66px; }
+}
+@media (max-width: 767px) {
+  .world-compass { top: 16px; bottom: auto; left: 16px; right: 16px; }
+  .world-header { display: none; }
+  .world-journey .world-record { max-height: 220px; }
+}
+html:has(.world-journey) .motion-toggle { border-radius: 2px; background: #10252ded; color: #cbbf97; border-color: #8caaad66; }
