@@ -2,6 +2,10 @@
 
 This is a Next.js application that serves as my personal portfolio. It showcases my projects, skills, and experience.
 
+Live portfolio: [www.d3troit.dev](https://www.d3troit.dev/)
+
+Current CV: [Download résumé](https://www.d3troit.dev/documents/Ebuka_Micheal_Duruaku_Resume.pdf)
+
 
 ![Portfolio Website](https://i.ibb.co/WgPMpts/image.png)
 ## Technologies Used

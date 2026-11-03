@@ -16,6 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.d3troit.dev/'),
   title: 'Ebuka Duruaku | Software Engineer',
   description: 'Ebuka Duruaku is a software engineer in Lagos building web, backend, and desktop applications, with a focus on Rust and systems engineering.',
 };
