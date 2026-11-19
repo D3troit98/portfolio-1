@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     siteName: 'Ebuka Duruaku',
     title: 'Ebuka Duruaku | Software Engineer',
     description: 'Building web, backend, and desktop applications, with a focus on Rust and systems engineering.',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Ebuka Duruaku — Software Engineer' }],
+    images: [{ url: '/images/social-preview.png', width: 1200, height: 630, alt: 'Ebuka Duruaku — From the interface to the internals.' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ebuka Duruaku | Software Engineer',
     description: 'Building web, backend, and desktop applications, with a focus on Rust and systems engineering.',
-    images: [{ url: '/opengraph-image', alt: 'Ebuka Duruaku — Software Engineer' }],
+    images: [{ url: '/images/social-preview.png', alt: 'Ebuka Duruaku — From the interface to the internals.' }],
   },
 };
 
