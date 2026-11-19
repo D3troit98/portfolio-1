@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="500" viewBox="0 0 1400 500" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Ebuka Duruaku — From the interface to the internals.</title>
+  <desc id="description">Software engineer in Lagos, Nigeria. Web interfaces, backend applications, data, and desktop and connected systems. Warm cream, charcoal, and rust editorial banner.</desc>
+  <rect width="1400" height="500" rx="12" fill="#f6f5ef"/>
+  <circle cx="80" cy="74" r="25" fill="#242b26"/>
+  <text x="80" y="80" text-anchor="middle" fill="#f6f5ef" font-family="monospace" font-size="17">ed.</text>
+  <text x="124" y="81" fill="#242b26" font-family="Arial, sans-serif" font-size="21" font-weight="600">Ebuka Duruaku</text>
+  <text x="1340" y="80" text-anchor="end" fill="#62675f" font-family="monospace" font-size="12" letter-spacing="2">SOFTWARE ENGINEER / LAGOS, NIGERIA</text>
+  <path d="M55 116 H1345" stroke="#d7d6cf"/>
+  <text x="60" y="207" fill="#242b26" font-family="Arial, sans-serif" font-size="61" letter-spacing="-2">From the interface</text>
+  <text x="60" y="280" fill="#242b26" font-family="Arial, sans-serif" font-size="61" letter-spacing="-2">to the <tspan fill="#a65332" font-family="Georgia, serif" font-style="italic">internals.</tspan></text>
+  <text x="63" y="328" fill="#62675f" font-family="Arial, sans-serif" font-size="19">Thoughtful interfaces. The logic underneath. The systems beyond the browser.</text>
+  <g transform="translate(1040 167)">
+    <path d="M0 0 H280 V45 H0Z" fill="#e6e7dd" stroke="#bcc3b5"/>
+    <path d="M-18 54 H262 V99 H-18Z" fill="#a65332" stroke="#a65332"/>
+    <path d="M-36 108 H244 V153 H-36Z" fill="#3d4b3f" stroke="#3d4b3f"/>
+    <path d="M-54 162 H226 V207 H-54Z" fill="#252e29" stroke="#252e29"/>
+    <text x="16" y="28" fill="#242b26" font-family="monospace" font-size="12">01 / INTERFACE</text>
+    <text x="-2" y="82" fill="#f6f5ef" font-family="monospace" font-size="12">02 / APPLICATION</text>
+    <text x="-20" y="136" fill="#f6f5ef" font-family="monospace" font-size="12">03 / DATA</text>
+    <text x="-38" y="190" fill="#f6f5ef" font-family="monospace" font-size="12">04 / DESKTOP + SYSTEMS</text>
+  </g>
+  <path d="M55 416 H1345" stroke="#d7d6cf"/>
+  <text x="63" y="459" fill="#62675f" font-family="monospace" font-size="12" letter-spacing="1.2">RUST / GO / C++ / TYPESCRIPT</text>
+  <text x="1340" y="459" text-anchor="end" fill="#a65332" font-family="monospace" font-size="12" letter-spacing="1.2">STILL CURIOUS. STILL BUILDING.</text>
+</svg>
